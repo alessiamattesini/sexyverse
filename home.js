@@ -1,6 +1,6 @@
 function preload(){
 
-      bg = loadImage("./assets/img/mappa_home.png");
+      //bg = loadImage("./assets/img/mappa_home.png");
 
 }
 
@@ -8,7 +8,7 @@ function setup() {
 
   createCanvas(windowWidth,windowHeight);
 
-  background(bg);
+  background(0);
 
   logo_sexy = createImg("./assets/img/logo_sexy_prova.png");
   logo_sexy.position(windowWidth/2 - 100, 60);
