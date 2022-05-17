@@ -23,12 +23,12 @@ function setup() {
   yourname.position((windowWidth / 2)-yourname.width/2, windowHeight/2);
 
   write = createP("Hey! What's your name?");
-  write.position(windowWidth/3, windowHeight/4);
-  write.style("color:white; font-size:60px; font-weight: bold;");
+  write.position(windowWidth/2 - 150, windowHeight/3);
+  write.style("color:white; font-size:30px; font-weight: bold;");
 
   //submit
   button = createButton('lets go');
-  button.position(yourname.x + yourname.width +20, windowHeight/2);
+  button.position(windowWidth/2 - button.width/2, windowHeight/2 + 100);
   button.mousePressed(name);
 
 
@@ -39,7 +39,10 @@ function draw() {
 }
 
 function name(){
-  console.log("funza");
+
+  let player_name = yourname.value();
+  console.log("funza" + player_name);
+
   }
 
 //function mousePressed() {
