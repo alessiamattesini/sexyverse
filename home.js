@@ -1,5 +1,6 @@
-function preload(){
+var start = false;
 
+function preload(){
 
 
 }
@@ -15,12 +16,13 @@ function setup() {
 
   //about
   about = createP("about");
-  about.position(windowWidth - 400, 45);
-  about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito");
+  about.position(windowWidth - 100, 45);
+  about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito;");
+  //about.mouseOver(miprendiingiro);
 
   //write your name
   yourname = createInput();
-  yourname.style("color: #ffffff; background:rgba(224, 254, 104, 0.3); border-radius: 50px; border: 1px solid #E0FE68;width: 244px; height: 43px; padding-left: 10px; font-size: 15px;text-align: center; font-family:Nunito;");
+  yourname.style("color: #ffffff; background:rgba(224, 254, 104, 0.3); border-radius: 50px; border: 1px solid #E0FE68; width: 244px; height: 43px; padding-left: 10px; font-size: 15px;text-align: center; font-family:Nunito;");
   yourname.position((windowWidth / 2)-244/2, windowHeight/2);
 
   write = createP("Hey! What's your name?");
@@ -38,17 +40,28 @@ function setup() {
 
 function draw() {
 
+  about.mouseOver(miprendiingiro);
+
 }
 
 function name(){
 
   let player_name = yourname.value();
   console.log("funza" + player_name);
+  start = true;
+  yourname.hide();
+  write.hide();
+  button.hide();
 
   }
 
-//function mousePressed() {
-//}
+ function miprendiingiro(){
+
+     console.log("funza2");
+     about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito; text-decoration: underline;");
+
+   }
+
 
 function windowResized(){
 
