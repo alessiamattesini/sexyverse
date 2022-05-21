@@ -1,6 +1,6 @@
 function preload(){
 
-      //bg = loadImage("./assets/img/mappa_home.png");
+
 
 }
 
@@ -20,7 +20,8 @@ function setup() {
 
   //write your name
   yourname = createInput();
-  yourname.position((windowWidth / 2)-yourname.width/2, windowHeight/2);
+  yourname.style("color: #ffffff; background:rgba(224, 254, 104, 0.3); border-radius: 50px; border: 1px solid #E0FE68;width: 244px; height: 43px; padding-left: 10px; font-size: 15px;text-align: center; font-family:Nunito;");
+  yourname.position((windowWidth / 2)-244/2, windowHeight/2);
 
   write = createP("Hey! What's your name?");
   write.position(windowWidth/2 - 150, windowHeight/3);
@@ -28,7 +29,8 @@ function setup() {
 
   //submit
   button = createButton('lets go');
-  button.position(windowWidth/2 - button.width/2, windowHeight/2 + 100);
+  button.style("border-radius: 50px; border: 1px solid #E0FE68; width: 244px; height: 43px; padding-left: 10px; font-size: 15px; font-family:Nunito;");
+  button.position(windowWidth/2 - 244/2, windowHeight/2 + 100);
   button.mousePressed(name);
 
 
