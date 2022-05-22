@@ -1,5 +1,7 @@
 var start = false;
 
+let chapter_1;
+
 function preload(){
 
 
@@ -14,6 +16,9 @@ function setup() {
   logo_sexy.position(windowWidth/2 - 100, 60);
 
   welcome = loadImage("./assets/img/WELCOME.png");
+
+  chapter_1 = createVideo("./assets/video/segnaposto.mp4");
+  chapter_1.hide();
 
 
   //about
@@ -46,6 +51,12 @@ function draw() {
   about.mouseOver(miprendiingiro);
   background(welcome);
 
+  if(start == true){
+
+    image(chapter_1, 0, 0);
+
+  }
+
 
 }
 
@@ -71,6 +82,18 @@ function name(){
 function about_page(){
 
   window.open("about.html", "_self");
+
+}
+
+function mousePressed(){
+
+  console.log("lo zia sto andando");
+
+  if(start == true){
+
+    chapter_1.play();
+
+  }
 
 }
 
