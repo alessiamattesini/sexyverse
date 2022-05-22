@@ -1,4 +1,5 @@
 var start = false;
+var go_on = 0;
 
 let chapter_1;
 
@@ -53,7 +54,7 @@ function draw() {
 
   if(start == true){
 
-    image(chapter_1, 0, 0);
+    image(chapter_1, 0, 0, windowWidth, windowHeight);
 
   }
 
@@ -87,11 +88,27 @@ function about_page(){
 
 function mousePressed(){
 
-  console.log("lo zia sto andando");
+  //console.log("lo zia sto andando");
 
   if(start == true){
 
     chapter_1.play();
+
+  }
+
+}
+
+function keyPressed(){
+
+  if(keyCode == 83){
+
+    console.log("daje");
+    if(start == true){
+
+        go_on++;
+        //console.log(go_on);
+
+    }
 
   }
 
