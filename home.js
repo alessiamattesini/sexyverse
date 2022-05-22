@@ -1,7 +1,12 @@
+var posso_andare = false;
+var go_on = 0;
+
 var start = false;
 var video =  false;
-press = false;
-var go_on = 0;
+var press = false;
+var rin = false;
+var vision = false;
+var rin_dialogue = true;
 
 let chapter_1;
 
@@ -61,19 +66,46 @@ function draw() {
 
   }
 
-  if(press == true){
+  if(press == true && go_on == 0){
 
     fill('#E0FE68');
     textAlign(CENTER);
     textSize(20);
-    text("press S to go on", windowWidth/2, windowHeight/2);
+    text("press E to go on", windowWidth/2, windowHeight/2);
 
   }
 
   if(go_on == 1 &&  start ==  true){
 
     console.log("adesso passiamo a Rin");
-    image()
+    //segnaposto per il video della visione
+
+    fill('#E0FE68');
+    textAlign(CENTER);
+    textSize(20);
+    text("Qui in realtà ci starebbe il video della visione di Rin", windowWidth/2, windowHeight/2);
+
+    press = false;
+    video = false;
+
+  }
+
+//questa del go_on è una soluzione mega-iper punk
+
+  if(go_on == 2){
+
+    image(chapter_1, 0, 0, windowWidth, windowHeight);
+
+
+    // rin = false;
+    // vision = true;
+    // go_on  = 0;
+
+  }
+
+  if(go_on == 3){
+
+    console.log("bella bro");
 
   }
 
@@ -83,8 +115,8 @@ function draw() {
 function name(){
 
   let player_name = yourname.value();
-  //console.log("funza" + player_name);
   start = true;
+  posso_andare = true;
   yourname.hide();
   write.hide();
   button.hide();
@@ -93,7 +125,6 @@ function name(){
 
  function miprendiingiro(){
 
-     //console.log("funza2");
      about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito; text-decoration: underline;");
 
    }
@@ -107,8 +138,6 @@ function about_page(){
 
 function mousePressed(){
 
-  //console.log("lo zia sto andando");
-
   if(start == true){
 
     chapter_1.play();
@@ -121,15 +150,11 @@ function mousePressed(){
 
 function keyPressed(){
 
-  if(keyCode == 83){
+  if(keyCode == 69){
 
-    //console.log("daje");
+    if(posso_andare == true){
 
-    if(start == true && video == true){
-
-        go_on++;
-        press = false;
-        video = false;
+      go_on++;
 
     }
 
@@ -140,6 +165,7 @@ function keyPressed(){
 function premi(){
 
   press = true;
+
 
 }
 
