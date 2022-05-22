@@ -1,4 +1,6 @@
 var start = false;
+var video =  false;
+press = false;
 var go_on = 0;
 
 let chapter_1;
@@ -52,9 +54,26 @@ function draw() {
   about.mouseOver(miprendiingiro);
   background(welcome);
 
-  if(start == true){
+  //video chapter 1
+  if(start == true && video == true){
 
     image(chapter_1, 0, 0, windowWidth, windowHeight);
+
+  }
+
+  if(press == true){
+
+    fill('#E0FE68');
+    textAlign(CENTER);
+    textSize(20);
+    text("press S to go on", windowWidth/2, windowHeight/2);
+
+  }
+
+  if(go_on == 1 &&  start ==  true){
+
+    console.log("adesso passiamo a Rin");
+    image()
 
   }
 
@@ -64,7 +83,7 @@ function draw() {
 function name(){
 
   let player_name = yourname.value();
-  console.log("funza" + player_name);
+  //console.log("funza" + player_name);
   start = true;
   yourname.hide();
   write.hide();
@@ -74,7 +93,7 @@ function name(){
 
  function miprendiingiro(){
 
-     console.log("funza2");
+     //console.log("funza2");
      about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito; text-decoration: underline;");
 
    }
@@ -93,6 +112,8 @@ function mousePressed(){
   if(start == true){
 
     chapter_1.play();
+    video = true;
+    setTimeout(premi, 7000);
 
   }
 
@@ -102,15 +123,23 @@ function keyPressed(){
 
   if(keyCode == 83){
 
-    console.log("daje");
-    if(start == true){
+    //console.log("daje");
+
+    if(start == true && video == true){
 
         go_on++;
-        //console.log(go_on);
+        press = false;
+        video = false;
 
     }
 
   }
+
+}
+
+function premi(){
+
+  press = true;
 
 }
 
