@@ -93,7 +93,7 @@ function draw() {
     press = false;
     video = false;
     posso_andare = false;
-    setTimeout(vai, 1000);
+    setTimeout(vai, 500);
 
   }
 
