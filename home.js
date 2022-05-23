@@ -106,8 +106,19 @@ function draw() {
 
     push();
     scale(0.5);
-    image(rin_worried, windowWidth + 200, windowHeight  -  996/4);
+    image(rin_worried, windowWidth + 200, windowHeight  -  996/6);
     pop();
+
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 750, 239/2, 235/2, 235/2);
+    pop();
+
+    push();
+    oh_no = "RIN — Oh boy, what the hell did I just see? I didn’t understand a thing! Please help me find out what this means! Let’s go in my Sex Archive.";
+    text(oh_no, windowWidth/10 + 10, windowHeight - 200 + 10);
 
 
   }
@@ -125,12 +136,12 @@ function draw() {
 
 function name(){
 
-  let player_name = yourname.value();
-  start = true;
-  posso_andare = true;
-  yourname.hide();
-  write.hide();
-  button.hide();
+    let player_name = yourname.value();
+    start = true;
+    posso_andare = true;
+    yourname.hide();
+    write.hide();
+    button.hide();
 
   }
 
