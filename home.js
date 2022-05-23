@@ -20,8 +20,12 @@ function setup() {
   logo_sexy = createImg("./assets/img/logo_sexy_prova.png");
   logo_sexy.position(windowWidth/2 - 100, 60);
 
+///////////////////////////////////////////////////////////////////////////LOAD EVERY IMAGE
+
   welcome = loadImage("./assets/img/WELCOME.png");
   vision = loadImage("./assets/img/Vision.png");
+  rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
+  studio_rin = loadImage("./assets/img/studio_rin.png");
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -73,6 +77,8 @@ function draw() {
 
   }
 
+  //visione di Rin
+
   if(go_on == 1 &&  start ==  true){
 
     console.log("adesso passiamo a Rin");
@@ -93,9 +99,15 @@ function draw() {
 
 //questa del go_on è una soluzione mega-iper punk
 
+
   if(go_on == 2){
 
-    image(chapter_1, 0, 0, windowWidth, windowHeight);
+    image(studio_rin, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.5);
+    image(rin_worried, windowWidth + 200, windowHeight  -  996/4);
+    pop();
 
 
   }
@@ -139,6 +151,7 @@ function mousePressed(){
 
   if(start == true){
 
+    logo_sexy.hide();
     chapter_1.play();
     video = true;
     setTimeout(premi, 7000);
@@ -168,6 +181,7 @@ function premi(){
 
 }
 
+
 function vai(){
 
   posso_andare = true;
@@ -182,4 +196,4 @@ function windowResized(){
       resizeCanvas(windowWidth, windowHeight);
       background('black');
 
-    }
+}
