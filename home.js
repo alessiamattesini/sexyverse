@@ -53,7 +53,6 @@ function setup() {
   button.position(windowWidth/2 - 244/2, windowHeight/2 + 100);
   button.mousePressed(name);
 
-
 }
 
 function draw() {
