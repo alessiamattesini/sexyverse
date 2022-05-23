@@ -4,9 +4,6 @@ var go_on = 0;
 var start = false;
 var video =  false;
 var press = false;
-var rin = false;
-var vision = false;
-var rin_dialogue = true;
 
 let chapter_1;
 
@@ -24,6 +21,7 @@ function setup() {
   logo_sexy.position(windowWidth/2 - 100, 60);
 
   welcome = loadImage("./assets/img/WELCOME.png");
+  vision = loadImage("./assets/img/Vision.png");
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -80,6 +78,7 @@ function draw() {
     console.log("adesso passiamo a Rin");
     //segnaposto per il video della visione
 
+    image(vision, 0, 0, windowWidth, windowHeight);
     fill('#E0FE68');
     textAlign(CENTER);
     textSize(20);
@@ -87,6 +86,8 @@ function draw() {
 
     press = false;
     video = false;
+    posso_andare = false;
+    setTimeout(vai, 1000);
 
   }
 
@@ -97,11 +98,9 @@ function draw() {
     image(chapter_1, 0, 0, windowWidth, windowHeight);
 
 
-    // rin = false;
-    // vision = true;
-    // go_on  = 0;
-
   }
+
+
 
   if(go_on == 3){
 
@@ -169,6 +168,14 @@ function premi(){
 
 }
 
+function vai(){
+
+  posso_andare = true;
+
+}
+
+
+//window resize
 
 function windowResized(){
 
