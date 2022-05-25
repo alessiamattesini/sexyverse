@@ -5,6 +5,9 @@ var start = false;
 var video =  false;
 var press = false;
 
+var fade = 0;
+var fadeAmount = 1;
+
 let chapter_1;
 
 function preload(){
@@ -72,7 +75,7 @@ function draw() {
     fill('#E0FE68');
     textAlign(CENTER);
     textSize(20);
-    text("press E to go on", windowWidth/2, windowHeight/2);
+    text("press SPACEBAR to go on", windowWidth/2, windowHeight/2);
 
   }
 
@@ -108,17 +111,58 @@ function draw() {
     image(rin_worried, windowWidth + 200, windowHeight  -  996/6);
     pop();
 
+
+    //TEXT BOX
     push();
     fill('rgba(69, 66, 168, 1)');
     stroke('rgba(212, 255, 164, 1)');
     strokeWeight(1.5);
-    rect(windowWidth/10, windowHeight - 200, 750, 239/2, 235/2, 235/2);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
     pop();
 
+    //NAME CHARACTER
     push();
-    oh_no = "RIN — Oh boy, what the hell did I just see? I didn’t understand a thing! Please help me find out what this means! Let’s go in my Sex Archive.";
-    text(oh_no, windowWidth/10 + 10, windowHeight - 200 + 10);
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
 
+    //TEXT
+    push();
+    oh_no = "Oh boy, what the hell did I just see? I didn’t understand a thing!";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(oh_no, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+    //PRESS TO GO ON
+
+     if (fade < 10 ){
+       fadeAmount = 3;
+     }
+     if (fade > 255){
+       fadeAmount = -3;
+     }
+     fade += fadeAmount;
+    // console.log(fade);
+
+    push();
+    spacebar = "Press SPACEBAR to go on";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(212, 255, 164, fade);
+    textSize(20);
+    text(spacebar, windowWidth/10 + 50, windowHeight - 223);
+    pop();
+
+    posso_andare = false;
+    setTimeout(vai, 500);
 
   }
 
@@ -126,7 +170,7 @@ function draw() {
 
   if(go_on == 3){
 
-    console.log("bella bro");
+
 
   }
 
@@ -172,7 +216,7 @@ function mousePressed(){
 
 function keyPressed(){
 
-  if(keyCode == 69){
+  if(keyCode == 32){
 
     if(posso_andare == true){
 
