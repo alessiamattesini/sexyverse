@@ -28,6 +28,7 @@ function setup() {
   welcome = loadImage("./assets/img/WELCOME.png");
   vision = loadImage("./assets/img/Vision.png");
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
+  rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
@@ -55,6 +56,11 @@ function setup() {
   button.style("border-radius: 50px; border: 1px solid #E0FE68; width: 244px; height: 43px; padding-left: 10px; font-size: 15px; font-family:Nunito;");
   button.position(windowWidth/2 - 244/2, windowHeight/2 + 100);
   button.mousePressed(name);
+
+  checkbox = createCheckbox('I accept the sexy rulez <3', false);
+  checkbox.position((width/2) - 100, height * 7 / 12);
+  checkbox.changed(myCheckedEvent);
+  checkbox.hide();
 
 }
 
@@ -95,7 +101,7 @@ function draw() {
     press = false;
     video = false;
     posso_andare = false;
-    setTimeout(vai, 500);
+    setTimeout(vai, 300);
 
   }
 
@@ -104,6 +110,8 @@ function draw() {
 
   if(go_on == 2){
 
+
+    //CHARACTER
     image(studio_rin, 0, 0, windowWidth, windowHeight);
 
     push();
@@ -162,7 +170,7 @@ function draw() {
     pop();
 
     posso_andare = false;
-    setTimeout(vai, 500);
+    setTimeout(vai, 300);
 
   }
 
@@ -170,7 +178,168 @@ function draw() {
 
   if(go_on == 3){
 
+    //CHARACTER
+    image(studio_rin, 0, 0, windowWidth, windowHeight);
 
+    push();
+    scale(0.5);
+    image(rin_worried, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    please = "Please help me find out what this means! Let’s go in my Sex Archive.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(please, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 300);
+
+
+  }
+
+  if (go_on == 4){
+
+    //CHARACTER
+    image(studio_rin, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.5);
+    image(rin_talk, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    ehi = "Ehi, Stop! First, I need to understand how sexy you are!";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(ehi, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 300);
+
+
+  }
+
+  if (go_on == 5){
+
+    //CHARACTER
+    image(studio_rin, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.5);
+    image(rin_talk, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    read = "Not everyone can enter the archive, I have to trust you. Please read the privacy rules. ";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(read, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 300);
+
+
+  }
+
+  if(go_on == 6){
+
+    background('rgba(46, 49, 146, 1)');
+
+    push();
+    textFont('Nunito');
+    textSize(80);
+    textAlign(CENTER);
+    text("ARCHIVE PRIVACY RULEZ", width / 2, height / 5);
+    pop();
+
+    push();
+    textFont('Nunito');
+    textSize(20);
+    text("1. Don’t talk about other people’s sexual life", width / 2, height * 4 / 12);
+    text("2. Don’t distribute the sexy contents without the consent of the persons involved. ", width / 2, height * 5 / 12);
+    text("3. Feel free to leave your sexy documents in this space, no one  is judging you. ", width / 2, height * 6 / 12);
+
+    checkbox.show();
+
+    text("Sign here", width/2, height * 8 / 12);
+    line((width/2)-150, height * 9 / 12, (width/2)+150, height * 9 / 12);
+    pop();
 
   }
 
@@ -242,6 +411,32 @@ function vai(){
 
 }
 
+function myCheckedEvent() {
+  if (checkbox.checked()) {
+    console.log('Checking!');
+  } else {
+    console.log('Unchecking!');
+  }
+}
+
+
+
+//////CAPIRE DOMATTINA COME MAI NON FUNZIONA
+function mouseDragged() {
+
+
+  if(go_on == 6){
+
+    push();
+    noStroke();
+    fill('black');
+    circle(mouseX, mouseY, 1);
+    pop();
+    console.log("che due coglioni");
+
+
+  }
+}
 
 //window resize
 
