@@ -30,9 +30,7 @@ function setup() {
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
   rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
-  privacy = createImg("./assets/img/privacy.png");
-  privacy.position(windowWidth/2 - privacy.width/2,  windowHeight/2 - privacy.height/2);
-  privacy.hide();
+  privacy = loadImage("./assets/img/privacy.png");
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -104,7 +102,7 @@ function draw() {
     press = false;
     video = false;
     posso_andare = false;
-    setTimeout(vai, 300);
+    setTimeout(vai, 200);
 
   }
 
@@ -173,7 +171,7 @@ function draw() {
     pop();
 
     posso_andare = false;
-    setTimeout(vai, 300);
+    setTimeout(vai, 200);
 
   }
 
@@ -221,7 +219,7 @@ function draw() {
 
 
     posso_andare = false;
-    setTimeout(vai, 300);
+    setTimeout(vai, 200);
 
 
   }
@@ -268,7 +266,7 @@ function draw() {
 
 
     posso_andare = false;
-    setTimeout(vai, 300);
+    setTimeout(vai, 200);
 
 
   }
@@ -315,7 +313,7 @@ function draw() {
 
 
     posso_andare = false;
-    setTimeout(vai, 300);
+    setTimeout(vai, 200);
 
 
   }
@@ -323,7 +321,7 @@ function draw() {
   if(go_on == 6){
 
     background('rgba(46, 49, 146, 1)');
-    privacy.show();
+    image(privacy, windowWidth/2 - privacy.width/2, windowHeight/2 - privacy.height/2);
 
     push();
     textFont('Nunito');
@@ -333,6 +331,7 @@ function draw() {
     pop();
 
     push();
+    fill('black');
     textFont('Nunito');
     textSize(20);
     text("1. Don’t talk about other people’s sexual life", width / 2, height * 4 / 12);
@@ -432,9 +431,9 @@ function mouseDragged() {
   if(go_on == 6){
 
     push();
-    noStroke();
-    fill('black');
-    circle(mouseX, mouseY, 1);
+    strokeWeight(3);
+    stroke('black');
+    line(pmouseX, pmouseY, mouseX, mouseY);
     pop();
     console.log("che due coglioni");
 
