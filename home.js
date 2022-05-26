@@ -30,6 +30,9 @@ function setup() {
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
   rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
+  privacy = createImg("./assets/img/privacy.png");
+  privacy.position(windowWidth/2 - privacy.width/2,  windowHeight/2 - privacy.height/2);
+  privacy.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -81,7 +84,7 @@ function draw() {
     fill('#E0FE68');
     textAlign(CENTER);
     textSize(20);
-    text("press SPACEBAR to go on", windowWidth/2, windowHeight/2);
+    text("press ENTER to go on", windowWidth/2, windowHeight/2);
 
   }
 
@@ -320,6 +323,7 @@ function draw() {
   if(go_on == 6){
 
     background('rgba(46, 49, 146, 1)');
+    privacy.show();
 
     push();
     textFont('Nunito');
@@ -385,7 +389,7 @@ function mousePressed(){
 
 function keyPressed(){
 
-  if(keyCode == 32){
+  if(keyCode == 13){
 
     if(posso_andare == true){
 
