@@ -6,6 +6,7 @@ var video =  false;
 var press = false;
 
 var sticazzi = false;
+var firma = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -36,6 +37,8 @@ function setup() {
   rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
   privacy = loadImage("./assets/img/privacy.png");
+  rin_intera = loadImage("./assets/img/characters/Rin_intera.png");
+  rin_lab = loadImage("./assets/img/rin_lab.png");
   // privacy.position(windowWidth/2 - 1384/2, windowHeight/2 - 763/2);
   // privacy.hide();
 
@@ -369,6 +372,62 @@ function draw() {
     rule_3.show();
     sign.show();
 
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+
+  }
+
+  if(go_on == 7 && checkbox.checked() && firma == true){
+
+    checkbox.hide();
+    archive.hide();
+    rule_1.hide();
+    rule_2.hide();
+    rule_3.hide();
+    sign.hide();
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.75);
+    image(rin_intera, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+    // TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    great = "Great! I'm glad you accepted, you're so hot! Welcome in the Sexyverse archive. Now let's get to work...";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(great, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+    //CI SONO UN PO' DI COSE DA SISTEMARE TIPO LO SFONDO E LA POSIZIONE E GRANDEZZA DI RIN MA PER "OGGI" PUò BASTARE
+
   }
 
 
@@ -460,6 +519,7 @@ function mouseDragged() {
     stroke('black');
     line(pmouseX, pmouseY, mouseX, mouseY);
     pop();
+    firma =  true;
     console.log("che due coglioni");
 
 
