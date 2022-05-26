@@ -75,20 +75,20 @@ function setup() {
 
   ////////////////////////////////////prova
   archive = createP("ARCHIVE PRIVACY RULEZ");
-  archive.position(width / 2 - archive.width/2, height / 5);
-  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
+  archive.position(width / 2, height / 5);
+  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
   rule_1 = createP("1. Don’t talk about other people’s sexual life");
-  rule_1.position(width / 2 - rule_1.width/2, height * 4 / 12);
-  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
+  rule_1.position(width / 2, height * 4 / 12);
+  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
   rule_2 = createP("2. Don’t distribute the sexy contents without the consent of the persons involved.");
-  rule_2.position(width / 2 - rule_2.width/2, height * 5 / 12);
-  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
+  rule_2.position(width / 2, height * 5 / 12);
+  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
   rule_3 = createP("3. Feel free to leave your sexy documents in this space, no one  is judging you.");
-  rule_3.position(width / 2  - rule_3.width/2, height * 6 / 12);
-  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
+  rule_3.position(width / 2, height * 6 / 12);
+  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
   sign = createP("Sing here");
-  sign.position(width/2 - sign.width/2, height * 8 / 12);
-  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
+  sign.position(width/2, height * 8 / 12);
+  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
 
 
   archive.hide();
@@ -365,7 +365,6 @@ function draw() {
   if(go_on == 6){
 
     checkbox.show();
-    //privacy.show();
     archive.show();
     rule_1.show();
     rule_2.show();
@@ -390,8 +389,8 @@ function draw() {
     image(rin_lab, 0, 0, windowWidth, windowHeight);
 
     push();
-    scale(0.75);
-    image(rin_intera, windowWidth + 200, windowHeight  -  996/6);
+    scale(0.65);
+    image(rin_intera, windowWidth - 70, windowHeight  -  500);
     pop();
 
     // TEXT BOX
@@ -426,10 +425,93 @@ function draw() {
     posso_andare = false;
     setTimeout(vai, 200);
 
-    //CI SONO UN PO' DI COSE DA SISTEMARE TIPO LO SFONDO E LA POSIZIONE E GRANDEZZA DI RIN MA PER "OGGI" PUò BASTARE
+  }
+
+
+  if(go_on == 8){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.65);
+    image(rin_intera, windowWidth - 70, windowHeight  -  500);
+    pop();
+
+    // TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    full = "The archive is full of books and objects that tell sexyverse stories.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(full, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+    posso_andare = false;
+    setTimeout(vai, 200);
 
   }
 
+  if(go_on ==  9){
+
+    // TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    push();
+    give = "Give it a grope...e.. I meant point and click to find useful information to decode my vision.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(give, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
+  if(go_on == 10){
+
+    
+
+
+  }
 
 }
 
