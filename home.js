@@ -5,6 +5,8 @@ var start = false;
 var video =  false;
 var press = false;
 
+var sticazzi = false;
+
 var fade = 0;
 var fadeAmount = 1;
 
@@ -25,12 +27,17 @@ function setup() {
 
 ///////////////////////////////////////////////////////////////////////////LOAD EVERY IMAGE
 
-  welcome = loadImage("./assets/img/WELCOME.png");
+  welcome = createImg("./assets/img/WELCOME.png");
+  welcome.position(0,0);
+  welcome.show();
+
   vision = loadImage("./assets/img/Vision.png");
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
   rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
   privacy = loadImage("./assets/img/privacy.png");
+  // privacy.position(windowWidth/2 - 1384/2, windowHeight/2 - 763/2);
+  // privacy.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -63,16 +70,42 @@ function setup() {
   checkbox.changed(myCheckedEvent);
   checkbox.hide();
 
+  ////////////////////////////////////prova
+  archive = createP("ARCHIVE PRIVACY RULEZ");
+  archive.position(width / 2, height / 5);
+  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_1 = createP("1. Don’t talk about other people’s sexual life");
+  rule_1.position(width / 2, height * 4 / 12);
+  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_2 = createP("2. Don’t distribute the sexy contents without the consent of the persons involved.");
+  rule_2.position(width / 2, height * 5 / 12);
+  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_3 = createP("3. Feel free to leave your sexy documents in this space, no one  is judging you.");
+  rule_3.position(width / 2, height * 6 / 12);
+  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  sign = createP("Sing here");
+  sign.position(width/2, height * 8 / 12);
+  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+
+
+  archive.hide();
+  rule_1.hide();
+  rule_2.hide();
+  rule_3.hide();
+  sign.hide();
+
+
 }
 
 function draw() {
 
   about.mouseOver(miprendiingiro);
-  background(welcome);
+  //background(welcome);
 
   //video chapter 1
-  if(start == true && video == true){
+  if(start == true && video == true && go_on == 0){
 
+    welcome.hide();
     image(chapter_1, 0, 0, windowWidth, windowHeight);
 
   }
@@ -313,36 +346,28 @@ function draw() {
 
 
     posso_andare = false;
+    sticazzi =  true;
     setTimeout(vai, 200);
 
 
   }
 
+  if( go_on == 6 && sticazzi == true){
+
+    image(privacy, windowWidth/2 - privacy.width/2, windowHeight/2 - privacy.height/2);
+    sticazzi  = false;
+
+  }
+
   if(go_on == 6){
 
-    background('rgba(46, 49, 146, 1)');
-    image(privacy, windowWidth/2 - privacy.width/2, windowHeight/2 - privacy.height/2);
-
-    push();
-    textFont('Nunito');
-    textSize(80);
-    textAlign(CENTER);
-    text("ARCHIVE PRIVACY RULEZ", width / 2, height / 5);
-    pop();
-
-    push();
-    fill('black');
-    textFont('Nunito');
-    textSize(20);
-    text("1. Don’t talk about other people’s sexual life", width / 2, height * 4 / 12);
-    text("2. Don’t distribute the sexy contents without the consent of the persons involved. ", width / 2, height * 5 / 12);
-    text("3. Feel free to leave your sexy documents in this space, no one  is judging you. ", width / 2, height * 6 / 12);
-
     checkbox.show();
-
-    text("Sign here", width/2, height * 8 / 12);
-    line((width/2)-150, height * 9 / 12, (width/2)+150, height * 9 / 12);
-    pop();
+    //privacy.show();
+    archive.show();
+    rule_1.show();
+    rule_2.show();
+    rule_3.show();
+    sign.show();
 
   }
 
