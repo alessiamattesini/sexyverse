@@ -75,20 +75,20 @@ function setup() {
 
   ////////////////////////////////////prova
   archive = createP("ARCHIVE PRIVACY RULEZ");
-  archive.position(width / 2, height / 5);
-  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  archive.position(width / 2 - archive.width/2, height / 5);
+  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
   rule_1 = createP("1. Don’t talk about other people’s sexual life");
-  rule_1.position(width / 2, height * 4 / 12);
-  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_1.position(width / 2 - rule_1.width/2, height * 4 / 12);
+  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
   rule_2 = createP("2. Don’t distribute the sexy contents without the consent of the persons involved.");
-  rule_2.position(width / 2, height * 5 / 12);
-  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_2.position(width / 2 - rule_2.width/2, height * 5 / 12);
+  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
   rule_3 = createP("3. Feel free to leave your sexy documents in this space, no one  is judging you.");
-  rule_3.position(width / 2, height * 6 / 12);
-  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_3.position(width / 2  - rule_3.width/2, height * 6 / 12);
+  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
   sign = createP("Sing here");
-  sign.position(width/2, height * 8 / 12);
-  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  sign.position(width/2 - sign.width/2, height * 8 / 12);
+  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: right; font-family: Nunito;");
 
 
   archive.hide();
