@@ -39,6 +39,8 @@ function setup() {
   privacy = loadImage("./assets/img/privacy.png");
   rin_intera = loadImage("./assets/img/characters/Rin_intera.png");
   rin_lab = loadImage("./assets/img/rin_lab.png");
+  archive_dark = loadImage("./assets/img/archive_dark.png");
+  folder = loadImage("./assets/img/folder.png");
   // privacy.position(windowWidth/2 - 1384/2, windowHeight/2 - 763/2);
   // privacy.hide();
 
@@ -508,8 +510,11 @@ function draw() {
 
   if(go_on == 10){
 
-    
+    image(archive_dark, 0, 0);
 
+
+    posso_andare = false;
+    setTimeout(vai, 200);
 
   }
 
