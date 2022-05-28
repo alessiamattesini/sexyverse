@@ -529,7 +529,12 @@ function draw() {
 
   if(go_on == 10){
 
-    image(archivio, 0, 0);
+    //image(archivio, 0, 0, windowWidth, windowHeight);
+
+    push();
+    fill('rgba(53, 28, 117, 0.5)');
+    rect(0,  0, windowWidth, windowHeight);
+    pop();
 
     folder.show();
     condom_bin.show();
