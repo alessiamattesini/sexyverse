@@ -39,7 +39,7 @@ function setup() {
   privacy = loadImage("./assets/img/privacy.png");
   rin_intera = loadImage("./assets/img/characters/Rin_intera.png");
   rin_lab = loadImage("./assets/img/rin_lab.png");
-  archive_dark = loadImage("./assets/img/archive_dark.png");
+  archivio = loadImage("./assets/img/archivio.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -451,7 +451,7 @@ function draw() {
     rule_3.hide();
     sign.hide();
 
-    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(archivio, 0, 0, windowWidth, windowHeight);
 
     push();
     scale(0.65);
@@ -514,7 +514,7 @@ function draw() {
     pop();
 
     push();
-    give = "Give it a grope...e.. I meant point and click to find useful information to decode my vision.";
+    give = "Give it a grope...e... I meant point and click to find useful information to decode my vision.";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -529,7 +529,7 @@ function draw() {
 
   if(go_on == 10){
 
-    image(archive_dark, 0, 0);
+    image(archivio, 0, 0);
 
     folder.show();
     condom_bin.show();
