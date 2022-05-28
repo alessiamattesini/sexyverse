@@ -9,6 +9,12 @@ var sticazzi = false;
 var firma = false;
 
 var totem_pdf = false;
+var totem_pdf2 = false;
+var info_totem = false;
+var info_revolution = false;
+
+var rev_1 =  false;
+var rev_2 =  false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -44,6 +50,10 @@ function setup() {
   archivio = loadImage("./assets/img/archivio.png");
   page_1 = loadImage("./assets/img/page_1.png");
   page_2 = loadImage("./assets/img/page_2.png");
+  alert_1 = loadImage("./assets/img/alert.png");
+  alert_2 = loadImage("./assets/img/alert_2.png");
+  albtn_1 = loadImage("./assets/img/albtn_1.png");
+  albtn_2 = loadImage("./assets/img/albtn_2.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -52,13 +62,14 @@ function setup() {
   folder.hide();
 
   condom_bin = createImg("./assets/img/condom_bin.png");
-  condom_bin.position(windowWidth * 4/5, windowHeight * 9/13);
+  condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
   condom_bin.hide();
 
   hazard = createImg("./assets/img/hazard.png");
   hazard.position(windowWidth * 2/9, windowHeight/4);
   hazard.size(165 * 0.6, 163 * 0.6);
+  hazard.doubleClicked(revolution);
   hazard.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
@@ -117,6 +128,21 @@ function setup() {
   sign.hide();
 
   //////////////////////////////////////////PRIVACY RULEZ END
+
+
+  //////////////////chiudi
+
+  next_page = createP(">>");
+  next_page.position(width / 2 + 320, height - 150);
+  next_page.style("color: rgba(53, 28, 117, 1); font-size: 40px; text-align: center; font-family: Nunito;");
+  next_page.mousePressed(page);
+  next_page.hide();
+
+  chiudi = createP("X");
+  chiudi.position(width / 2 + 370,  80);
+  chiudi.style("color: rgba(53, 28, 117, 1); font-size: 40px; text-align: center; font-family: Nunito;");
+  chiudi.mousePressed(chiudifile);
+  chiudi.hide();
 
 
 }
@@ -553,7 +579,7 @@ function draw() {
     textAlign(CENTER);
     textSize(16);
     fill('white');
-    text(label_1, windowWidth * 4/5, windowHeight * 9/13 + 100, 158 * 0.6, 179*0.6);
+    text(label_1, windowWidth * 4/5 - 45, windowHeight * 9/13 + 100, 158 * 0.6, 179*0.6);
     pop();
 
     push();
@@ -579,13 +605,41 @@ function draw() {
       folder.hide();
       condom_bin.hide();
       hazard.hide();
-      label_1 = "";
-      label_2 = "";
-      label_3 = "";
+
+      next_page.show();
 
       push();
       scale(0.75);
-      image(page_1, windowWidth/ - page_1.width/2 * 0.75, windowHeight/2 - page_1.height/2 * 0.75);
+      image(page_1, 0, 0);
+      pop();
+
+    }
+
+    if(totem_pdf2 == true){
+
+      totem_pdf = false;
+      folder.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      next_page.hide();
+      chiudi.show();
+
+      push();
+      scale(0.75);
+      image(page_2, 0, 0);
+      pop();
+
+    }
+
+    if(rev_1 == true){
+
+      folder.hide();
+
+      push();
+      scale(0.75);
+      image(alert_1, 0, 0);
+      image(albtn_1, 0, 0);
       pop();
 
     }
@@ -713,6 +767,26 @@ function mouseDragged() {
 
 
   }
+}
+
+function page(){
+
+  totem_pdf2 = true;
+
+}
+
+function revolution(){
+
+  rev_1 = true;
+
+}
+
+function chiudifile(){
+
+  totem_pdf2 = false;
+  chiudi.hide();
+  info_totem = true;
+
 }
 
 //window resize
