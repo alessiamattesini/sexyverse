@@ -40,9 +40,19 @@ function setup() {
   rin_intera = loadImage("./assets/img/characters/Rin_intera.png");
   rin_lab = loadImage("./assets/img/rin_lab.png");
   archive_dark = loadImage("./assets/img/archive_dark.png");
-  folder = loadImage("./assets/img/folder.png");
-  // privacy.position(windowWidth/2 - 1384/2, windowHeight/2 - 763/2);
-  // privacy.hide();
+
+  folder = createImg("./assets/img/folder.png");
+  folder.position(windowWidth/2, windowHeight/2);
+  folder.doubleClicked(apri_cartella);
+  folder.hide();
+
+  condom_bin = createImg("./assets/img/condom_bin.png");
+  condom_bin.position(windowWidth * 4/5, windowHeight * 9/13);
+  condom_bin.hide();
+
+  hazard = createImg("./assets/img/hazard.png");
+  hazard.position(windowWidth * 2/9, windowHeight/4);
+  hazard.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -53,7 +63,6 @@ function setup() {
   about.position(windowWidth - 100, 45);
   about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito;");
   about.mousePressed(about_page);
-  //about.mouseOver(miprendiingiro);
 
   //write your name
   yourname = createInput();
@@ -75,7 +84,8 @@ function setup() {
   checkbox.changed(myCheckedEvent);
   checkbox.hide();
 
-  ////////////////////////////////////prova
+  ////////////////////////////////////PRIVACY RULEZ start
+
   archive = createP("ARCHIVE PRIVACY RULEZ");
   archive.position(width / 2, height / 5);
   archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
@@ -98,6 +108,8 @@ function setup() {
   rule_2.hide();
   rule_3.hide();
   sign.hide();
+
+  //////////////////////////////////////////PRIVACY RULEZ END
 
 
 }
@@ -432,6 +444,13 @@ function draw() {
 
   if(go_on == 8){
 
+    checkbox.hide();
+    archive.hide();
+    rule_1.hide();
+    rule_2.hide();
+    rule_3.hide();
+    sign.hide();
+
     image(rin_lab, 0, 0, windowWidth, windowHeight);
 
     push();
@@ -512,6 +531,9 @@ function draw() {
 
     image(archive_dark, 0, 0);
 
+    folder.show();
+    condom_bin.show();
+    hazard.show();
 
     posso_andare = false;
     setTimeout(vai, 200);
@@ -519,6 +541,8 @@ function draw() {
   }
 
 }
+
+
 
 function name(){
 
@@ -530,6 +554,21 @@ function name(){
     button.hide();
 
   }
+
+  function keyPressed(){
+
+    if(keyCode == 13){
+
+      if(posso_andare == true){
+
+        go_on++;
+
+      }
+
+    }
+
+  }
+
 
  function miprendiingiro(){
 
@@ -582,6 +621,12 @@ function premi(){
 function vai(){
 
   posso_andare = true;
+
+}
+
+function apri_cartella(){
+
+  console.log("l'ho aperta");
 
 }
 
