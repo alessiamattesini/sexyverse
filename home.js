@@ -8,6 +8,8 @@ var press = false;
 var sticazzi = false;
 var firma = false;
 
+var totem_pdf = false;
+
 var fade = 0;
 var fadeAmount = 1;
 
@@ -40,18 +42,23 @@ function setup() {
   rin_intera = loadImage("./assets/img/characters/Rin_intera.png");
   rin_lab = loadImage("./assets/img/rin_lab.png");
   archivio = loadImage("./assets/img/archivio.png");
+  page_1 = loadImage("./assets/img/page_1.png");
+  page_2 = loadImage("./assets/img/page_2.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
   folder.doubleClicked(apri_cartella);
+  folder.size(179 * 0.6, 156 * 0.6);
   folder.hide();
 
   condom_bin = createImg("./assets/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5, windowHeight * 9/13);
+  condom_bin.size(158 * 0.6, 179 * 0.6);
   condom_bin.hide();
 
   hazard = createImg("./assets/img/hazard.png");
   hazard.position(windowWidth * 2/9, windowHeight/4);
+  hazard.size(165 * 0.6, 163 * 0.6);
   hazard.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
@@ -277,7 +284,7 @@ function draw() {
   if (go_on == 4){
 
     //CHARACTER
-    image(studio_rin, 0, 0, windowWidth, windowHeight);
+    //image(studio_rin, 0, 0, windowWidth, windowHeight);
 
     push();
     scale(0.5);
@@ -324,7 +331,7 @@ function draw() {
   if (go_on == 5){
 
     //CHARACTER
-    image(studio_rin, 0, 0, windowWidth, windowHeight);
+    //image(studio_rin, 0, 0, windowWidth, windowHeight);
 
     push();
     scale(0.5);
@@ -479,7 +486,7 @@ function draw() {
 
     //TEXT
     push();
-    full = "The archive is full of books and objects that tell sexyverse stories.";
+    full = "The archive is full of books and objects that tell Sexyverse's stories.";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -529,10 +536,10 @@ function draw() {
 
   if(go_on == 10){
 
-    //image(archivio, 0, 0, windowWidth, windowHeight);
+    image(archivio, 0, 0, windowWidth, windowHeight);
 
     push();
-    fill('rgba(53, 28, 117, 0.5)');
+    fill('rgba(0, 0, 0, 0.5)');
     rect(0,  0, windowWidth, windowHeight);
     pop();
 
@@ -540,8 +547,52 @@ function draw() {
     condom_bin.show();
     hazard.show();
 
+    push();
+    label_1 =  "condom bin";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_1, windowWidth * 4/5, windowHeight * 9/13 + 100, 158 * 0.6, 179*0.6);
+    pop();
+
+    push();
+    label_2 =  "AWKW_chaces";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_2, windowWidth * 2/9, windowHeight/4 + 80, 165 * 0.6, 163 * 0.6);
+    pop();
+
+    push();
+    label_3 =  "TOTEM.pdf";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_3, windowWidth/2, windowHeight/2 + 80, 179 * 0.6, 156 * 0.6);
+    pop();
+
+    if(totem_pdf == true){
+
+      folder.hide();
+      condom_bin.hide();
+      hazard.hide();
+      label_1 = "";
+      label_2 = "";
+      label_3 = "";
+
+      push();
+      scale(0.75);
+      image(page_1, windowWidth/ - page_1.width/2 * 0.75, windowHeight/2 - page_1.height/2 * 0.75);
+      pop();
+
+    }
+
+
     posso_andare = false;
-    setTimeout(vai, 200);
+    //setTimeout(vai, 200);
 
   }
 
@@ -632,6 +683,7 @@ function vai(){
 function apri_cartella(){
 
   console.log("l'ho aperta");
+  totem_pdf =  true;
 
 }
 
