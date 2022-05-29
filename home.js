@@ -52,8 +52,8 @@ function setup() {
   page_2 = loadImage("./assets/img/page_2.png");
   alert_1 = loadImage("./assets/img/alert.png");
   alert_2 = loadImage("./assets/img/alert_2.png");
-  albtn_1 = loadImage("./assets/img/albtn_1.png");
-  albtn_2 = loadImage("./assets/img/albtn_2.png");
+  //albtn_1 = loadImage("./assets/img/albtn_1.png");
+  //albtn_2 = loadImage("./assets/img/albtn_2.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -71,6 +71,18 @@ function setup() {
   hazard.size(165 * 0.6, 163 * 0.6);
   hazard.doubleClicked(revolution);
   hazard.hide();
+
+  albtn_1 = createImg("./assets/img/albtn_1.png");
+  albtn_1.position(0, 0);
+  albtn_1.size(1920 * 0.75, 1080 * 0.75);
+  albtn_1.mousePressed(next_rev);
+  albtn_1.hide();
+
+  albtn_2 = createImg("./assets/img/albtn_2.png");
+  albtn_2.position(0, 0);
+  albtn_2.size(1920 * 0.75, 1080 * 0.75);
+  albtn_2.mousePressed(next_rev2);
+  albtn_2.hide();
 
   chapter_1 = createVideo("./assets/video/segnaposto.mp4");
   chapter_1.hide();
@@ -245,12 +257,12 @@ function draw() {
     // console.log(fade);
 
     push();
-    spacebar = "Press SPACEBAR to go on";
+    enter = "Press ENTER to go on";
     textFont('Nunito');
     textAlign(LEFT);
     fill(212, 255, 164, fade);
     textSize(20);
-    text(spacebar, windowWidth/10 + 50, windowHeight - 223);
+    text(enter, windowWidth/10 + 50, windowHeight - 223);
     pop();
 
     posso_andare = false;
@@ -639,13 +651,54 @@ function draw() {
       push();
       scale(0.75);
       image(alert_1, 0, 0);
-      image(albtn_1, 0, 0);
       pop();
+
+      albtn_1.show();
+
+    }
+
+    if(rev_2 == true){
+
+      folder.hide();
+
+      push();
+      scale(0.75);
+      image(alert_1, 0, 0);
+      image(alert_2, 0, 0);
+      pop();
+
+      albtn_1.show();
+      albtn_2.show();
 
     }
 
 
     posso_andare = false;
+
+    if(info_totem == true && info_revolution == true){
+
+      posso_andare = true;
+
+      if (fade < 10 ){
+        fadeAmount = 3;
+      }
+      if (fade > 255){
+        fadeAmount = -3;
+      }
+      fade += fadeAmount;
+     // console.log(fade);
+
+     push();
+     enter = "Press ENTER to go on";
+     textFont('Nunito');
+     textAlign(CENTER);
+     fill(212, 255, 164, fade);
+     textSize(30);
+     text(enter, windowWidth/2 , windowHeight - 200);
+     pop();
+
+
+    }
     //setTimeout(vai, 200);
 
   }
@@ -778,6 +831,22 @@ function page(){
 function revolution(){
 
   rev_1 = true;
+
+}
+
+function next_rev(){
+
+  rev_2 = true;
+
+}
+
+function next_rev2(){
+
+  rev_1 = false;
+  rev_2 = false;
+  info_revolution = true;
+  albtn_1.hide();
+  albtn_2.hide();
 
 }
 
