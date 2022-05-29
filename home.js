@@ -89,10 +89,10 @@ function setup() {
 
 
   //about
-  about = createP("about");
-  about.position(windowWidth - 100, 45);
-  about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito;");
-  about.mousePressed(about_page);
+  // about = createP("about");
+  // about.position(windowWidth - 100, 45);
+  // about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito;");
+  // about.mousePressed(about_page);
 
   //write your name
   yourname = createInput();
@@ -144,15 +144,15 @@ function setup() {
 
   //////////////////chiudi
 
-  next_page = createP(">>");
-  next_page.position(width / 2 + 320, height - 150);
-  next_page.style("color: rgba(53, 28, 117, 1); font-size: 40px; text-align: center; font-family: Nunito;");
+  next_page = createImg("./assets/img/arrow_libro.png");
+  next_page.position(0, 0);
+  next_page.size(1920 * 0.75, 1080 * 0.75);
   next_page.mousePressed(page);
   next_page.hide();
 
-  chiudi = createP("X");
-  chiudi.position(width / 2 + 370,  80);
-  chiudi.style("color: rgba(53, 28, 117, 1); font-size: 40px; text-align: center; font-family: Nunito;");
+  chiudi = createImg("./assets/img/chiudi_libro.png");
+  chiudi.position(0, 0);
+  chiudi.size(1920 * 0.75, 1080 * 0.75);
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
 
@@ -161,7 +161,7 @@ function setup() {
 
 function draw() {
 
-  about.mouseOver(miprendiingiro);
+  //about.mouseOver(miprendiingiro);
   //background(welcome);
 
   //video chapter 1
@@ -703,6 +703,91 @@ function draw() {
 
   }
 
+  if( go_on == 11){
+
+    image(archivio, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.5);
+    image(rin_worried, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+    folder.hide();
+    condom_bin.hide();
+    hazard.hide();
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    wtf = "WTF, oopsie, I think we might be in trouble.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(wtf, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
+  if (go_on == 12){
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    must = "Someone’s going to get the lost Awkwardness totem! We must tell Himeros, he’ll know what to do.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(must, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
 }
 
 
@@ -733,18 +818,18 @@ function name(){
   }
 
 
- function miprendiingiro(){
+ // function miprendiingiro(){
+ //
+ //     about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito; text-decoration: underline;");
+ //
+ //   }
 
-     about.style("color:rgb(224, 254, 24); font-size:20px; font-family:Nunito; text-decoration: underline;");
 
-   }
-
-
-function about_page(){
-
-  window.open("about.html", "_self");
-
-}
+// function about_page(){
+//
+//   window.open("about.html", "_self");
+//
+// }
 
 function mousePressed(){
 
