@@ -1,6 +1,8 @@
 var posso_andare = false;
 var go_on = 0;
 
+var player_name;
+
 var start = false;
 var video =  false;
 var press = false;
@@ -18,6 +20,8 @@ var rev_2 =  false;
 
 var travel = false;
 var diversity = false;
+
+var daje = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -61,6 +65,7 @@ function setup() {
   //albtn_2 = loadImage("./assets/img/albtn_2.png");
   himeros_garden = loadImage("./assets/img/himerosgarden.png");
   himeros = loadImage("./assets/img/characters/himeros.png");
+  phone_scene = loadImage("./assets/img/phone_scene.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -117,62 +122,13 @@ function setup() {
   button.mousePressed(name);
 
   checkbox = createCheckbox('I accept the sexy rulez <3', false);
-  checkbox.position((width/2), height * 8 / 12);
+  checkbox.position((width/2) - checkbox.width/9, height * 8 / 12 - 60);
   checkbox.changed(myCheckedEvent);
   checkbox.style('color', 'rgba(53, 28, 117, 1)');
 	checkbox.style('font-size', '25px');
 	checkbox.style('font-family', 'Nunito');
-	checkbox.style('text-align', 'center');
+	checkbox.style('text-align', 'right');
   checkbox.hide();
-
-
-  ////////////////////////////////////PRIVACY RULEZ start
-
-
-  archive = createP("ARCHIVE PRIVACY RULEZ");
-  archive.position(width / 2, height * 2 / 12);
-  //archive.style("color: rgba(53, 28, 117, 1); font-size: 150; text-align: center; font-family: Nunito;");
-  archive.style('color', 'rgba(53, 28, 117, 1)');
-	archive.style('font-size', '40px');
-	archive.style('font-family', 'Nunito');
-	archive.style('text-align', 'center');
-  rule_1 = createP("1. Don’t talk about other people’s sexual life");
-  rule_1.position(width / 2, height * 3 / 12);
-  //rule_1.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
-  rule_1.style('color', 'rgba(53, 28, 117, 1)');
-	rule_1.style('font-size', '25px');
-	rule_1.style('font-family', 'Nunito');
-	rule_1.style('text-align', 'center');
-  rule_2 = createP("2. Don’t distribute the sexy contents without the consent of the persons involved.");
-  rule_2.position(width / 2, height * 4 / 12);
-  //rule_2.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
-  rule_2.style('color', 'rgba(53, 28, 117, 1)');
-	rule_2.style('font-size', '25px');
-	rule_2.style('font-family', 'Nunito');
-	rule_2.style('text-align', 'center');
-  rule_3 = createP("3. Feel free to leave your sexy documents in this space, no one  is judging you.");
-  rule_3.position(width / 2, height *  / 12);
-  //rule_3.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
-  rule_3.style('color', 'rgba(53, 28, 117, 1)');
-	rule_3.style('font-size', '25px');
-	rule_3.style('font-family', 'Nunito');
-	rule_3.style('text-align', 'center');
-  sign = createP("Sign here");
-  sign.position(width/2, height * 9 / 12);
-  //sign.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
-  sign.style('color', 'rgba(53, 28, 117, 1)');
-	sign.style('font-size', '25px');
-	sign.style('font-family', 'Nunito');
-	sign.style('text-align', 'center');
-
-
-  archive.hide();
-  rule_1.hide();
-  rule_2.hide();
-  rule_3.hide();
-  sign.hide();
-
-  //////////////////////////////////////////PRIVACY RULEZ END
 
 
   //////////////////chiudi
@@ -477,7 +433,7 @@ function draw() {
 
   if( go_on == 6 && sticazzi == true){
 
-    image(privacy, windowWidth/2 - privacy.width/2, windowHeight/2 - privacy.height/2);
+    image(privacy, 0, 0, windowWidth, windowHeight);
     sticazzi  = false;
 
   }
@@ -485,11 +441,11 @@ function draw() {
   if(go_on == 6){
 
     checkbox.show();
-    archive.show();
-    rule_1.show();
-    rule_2.show();
-    rule_3.show();
-    sign.show();
+    // archive.show();
+    // rule_1.show();
+    // rule_2.show();
+    // //rule_3.show();
+    // sign.show();
 
     posso_andare = false;
     setTimeout(vai, 200);
@@ -500,11 +456,11 @@ function draw() {
   if(go_on == 7 && checkbox.checked() && firma == true){
 
     checkbox.hide();
-    archive.hide();
-    rule_1.hide();
-    rule_2.hide();
-    rule_3.hide();
-    sign.hide();
+    // archive.hide();
+    // rule_1.hide();
+    // rule_2.hide();
+    // //rule_3.hide();
+    // sign.hide();
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
 
@@ -551,11 +507,11 @@ function draw() {
   if(go_on == 8){
 
     checkbox.hide();
-    archive.hide();
-    rule_1.hide();
-    rule_2.hide();
-    rule_3.hide();
-    sign.hide();
+    // archive.hide();
+    // rule_1.hide();
+    // rule_2.hide();
+    // //rule_3.hide();
+    // sign.hide();
 
     image(archivio, 0, 0, windowWidth, windowHeight);
 
@@ -1004,19 +960,256 @@ function draw() {
 
    }
 
-   if(go_on == 17){
+   if(daje == true){
 
      image(himeros_garden, 0, 0, windowWidth, windowHeight);
 
      push();
      scale(0.65);
-     image(rin_intera, windowWidth, windowHeight  -  500);
+     image(rin_intera, windowWidth + 210, windowHeight  -  500);
      pop();
 
      push();
      scale(0.65);
-     image(himeros, 70, windowHeight  -  550);
+     image(himeros, 70, windowHeight  -  580);
      pop();
+
+     //TEXT BOX
+     push();
+     fill('rgba(69, 66, 168, 1)');
+     stroke('rgba(212, 255, 164, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "RIN";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(212, 255, 164, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "Himeros you will never guess what I saw! I fear the worst is about to come upon our galaxy.";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+
+   }
+
+   if(go_on == 17){
+
+     daje = false;
+
+     image(himeros_garden, 0, 0, windowWidth, windowHeight);
+
+     push();
+     scale(0.65);
+     image(rin_intera, windowWidth + 210, windowHeight  -  500);
+     pop();
+
+     push();
+     scale(0.65);
+     image(himeros, 70, windowHeight  -  580);
+     pop();
+
+     //TEXT BOX
+     push();
+     fill('rgba(69, 66, 168, 1)');
+     stroke('rgba(212, 255, 164, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "RIN";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(212, 255, 164, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "Someone is intent on stealing the Awkwardness totem!";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+
+   }
+
+   if(go_on == 18){
+
+     //TEXT BOX
+     push();
+     fill('rgba(147, 39, 143, 1)');
+     stroke('rgba(255, 174, 53, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "HIMEROS";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(255, 174, 53, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "For all the giant cocks Rin! This is superb! WOW.";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+   }
+
+   if(go_on == 19){
+
+     //TEXT BOX
+     push();
+     fill('rgba(147, 39, 143, 1)');
+     stroke('rgba(255, 174, 53, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "HIMEROS";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(255, 174, 53, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "It means we finally have a chance to help AWKW, once and for all Sexyverse will be at peace. Ready for the adventure?";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+   }
+
+   if(go_on == 20){
+
+     //TEXT BOX
+     push();
+     fill('rgba(69, 66, 168, 1)');
+     stroke('rgba(212, 255, 164, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "RIN";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(212, 255, 164, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "Oh it's my phone! an urgent message has arrived.";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+   }
+
+   if(go_on == 21){
+
+     //TEXT BOX
+     push();
+     fill('rgba(147, 39, 143, 1)');
+     stroke('rgba(255, 174, 53, 1)');
+     strokeWeight(1.5);
+     rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+     pop();
+
+     //NAME CHARACTER
+     push();
+     rin_name = "HIMEROS";
+     textFont('Nunito');
+     textStyle(BOLD);
+     textAlign(LEFT);
+     textSize(20);
+     fill('rgba(255, 174, 53, 1)');
+     text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
+
+     //TEXT
+     push();
+     governor = "Mmm...how strange! It vibrates just like my last anal plug.";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(255);
+     textSize(20);
+     text(governor, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+     pop();
+
+     posso_andare = false;
+     setTimeout(vai, 200);
+
+   }
+
+   if(go_on == 22){
+
+     image(phone_scene, 0, 0, windowWidth, windowHeight);
+
+     posso_andare = false;
+     setTimeout(vai, 200);
 
    }
 
@@ -1027,7 +1220,7 @@ function draw() {
 
 function name(){
 
-    let player_name = yourname.value();
+    player_name = yourname.value();
     start = true;
     posso_andare = true;
     yourname.hide();
@@ -1084,6 +1277,7 @@ function keyPressed(){
     if(posso_andare == true){
 
       go_on++;
+
 
     }
 
@@ -1196,7 +1390,7 @@ function chiudifile(){
 
  function go(){
 
-   go_on = 17;
+   daje = true;
 
  }
 
