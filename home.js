@@ -703,7 +703,7 @@ function draw() {
 
   }
 
-  if( go_on == 11){
+  if(go_on == 11 && info_totem == true &&  info_revolution ==  true){
 
     image(archivio, 0, 0, windowWidth, windowHeight);
 
@@ -787,6 +787,125 @@ function draw() {
     setTimeout(vai, 200);
 
   }
+
+  if (go_on == 13){
+
+    image(archivio, 0, 0, windowWidth, windowHeight);
+
+    push();
+    scale(0.5);
+    image(rin_talk, windowWidth + 200, windowHeight  -  996/6);
+    pop();
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    governor = "Himeros was the governor of Central Land, and today he is the most knowledgeable in the Sexyverse. ";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(governor, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
+  if(go_on == 14){
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    met = "I met him totally by chance during an intensive tantric sex workshop.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(met, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
+  if(go_on == 15){
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(212, 255, 164, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(212, 255, 164, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    askhim = "He lives in diversity, let's go and ask him about Awkardness totem.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(askhim, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+    posso_andare = false;
+    setTimeout(vai, 200);
+
+  }
+
 
 }
 
