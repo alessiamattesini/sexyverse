@@ -22,6 +22,7 @@ var travel = false;
 var diversity = false;
 
 var daje = false;
+var emergency = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -1208,10 +1209,26 @@ function draw() {
 
      image(phone_scene, 0, 0, windowWidth, windowHeight);
 
+    push();
+    enter = "To be continued... Are you curious? Check @thereal_himeros on IG.";
+    textFont('Nunito');
+    textAlign(CENTER);
+    fill('rgba(212, 255, 164, 1)');
+    textSize(30);
+    text(enter, windowWidth/2, windowHeight - 150);
+    pop();
+
+
      posso_andare = false;
-     setTimeout(vai, 200);
+
 
    }
+
+   // if(go_on == 23){
+   //
+   //   image(himeros_garden, 0, 0, windowWidth, windowHeight);
+   //
+   // }
 
 
 }
