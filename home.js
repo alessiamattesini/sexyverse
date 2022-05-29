@@ -117,27 +117,53 @@ function setup() {
   button.mousePressed(name);
 
   checkbox = createCheckbox('I accept the sexy rulez <3', false);
-  checkbox.position((width/2) - 100, height * 7 / 12);
+  checkbox.position((width/2), height * 8 / 12);
   checkbox.changed(myCheckedEvent);
+  checkbox.style('color', 'rgba(53, 28, 117, 1)');
+	checkbox.style('font-size', '25px');
+	checkbox.style('font-family', 'Nunito');
+	checkbox.style('text-align', 'center');
   checkbox.hide();
+
 
   ////////////////////////////////////PRIVACY RULEZ start
 
+
   archive = createP("ARCHIVE PRIVACY RULEZ");
-  archive.position(width / 2, height / 5);
-  archive.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  archive.position(width / 2, height * 2 / 12);
+  //archive.style("color: rgba(53, 28, 117, 1); font-size: 150; text-align: center; font-family: Nunito;");
+  archive.style('color', 'rgba(53, 28, 117, 1)');
+	archive.style('font-size', '40px');
+	archive.style('font-family', 'Nunito');
+	archive.style('text-align', 'center');
   rule_1 = createP("1. Don’t talk about other people’s sexual life");
-  rule_1.position(width / 2, height * 4 / 12);
-  rule_1.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_1.position(width / 2, height * 3 / 12);
+  //rule_1.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
+  rule_1.style('color', 'rgba(53, 28, 117, 1)');
+	rule_1.style('font-size', '25px');
+	rule_1.style('font-family', 'Nunito');
+	rule_1.style('text-align', 'center');
   rule_2 = createP("2. Don’t distribute the sexy contents without the consent of the persons involved.");
-  rule_2.position(width / 2, height * 5 / 12);
-  rule_2.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_2.position(width / 2, height * 4 / 12);
+  //rule_2.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
+  rule_2.style('color', 'rgba(53, 28, 117, 1)');
+	rule_2.style('font-size', '25px');
+	rule_2.style('font-family', 'Nunito');
+	rule_2.style('text-align', 'center');
   rule_3 = createP("3. Feel free to leave your sexy documents in this space, no one  is judging you.");
-  rule_3.position(width / 2, height * 6 / 12);
-  rule_3.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
-  sign = createP("Sing here");
-  sign.position(width/2, height * 8 / 12);
-  sign.style("color: rgba(53, 28, 117, 1); font-size: 80; text-align: center; font-family: Nunito;");
+  rule_3.position(width / 2, height *  / 12);
+  //rule_3.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
+  rule_3.style('color', 'rgba(53, 28, 117, 1)');
+	rule_3.style('font-size', '25px');
+	rule_3.style('font-family', 'Nunito');
+	rule_3.style('text-align', 'center');
+  sign = createP("Sign here");
+  sign.position(width/2, height * 9 / 12);
+  //sign.style("color: rgba(53, 28, 117, 1); font-size: 100; text-align: center; font-family: Nunito;");
+  sign.style('color', 'rgba(53, 28, 117, 1)');
+	sign.style('font-size', '25px');
+	sign.style('font-family', 'Nunito');
+	sign.style('text-align', 'center');
 
 
   archive.hide();
