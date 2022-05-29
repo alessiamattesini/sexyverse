@@ -59,6 +59,8 @@ function setup() {
   diversity_land = loadImage("./assets/img/diversity_land.png");
   //albtn_1 = loadImage("./assets/img/albtn_1.png");
   //albtn_2 = loadImage("./assets/img/albtn_2.png");
+  himeros_garden = loadImage("./assets/img/himerosgarden.png");
+  himeros = loadImage("./assets/img/characters/himeros.png");
 
   folder = createImg("./assets/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -972,6 +974,24 @@ function draw() {
      image(diversity_land, 0, 0, windowWidth, windowHeight);
      icona_mappa.hide();
 
+     setTimeout(go, 2000);
+
+   }
+
+   if(go_on == 17){
+
+     image(himeros_garden, 0, 0, windowWidth, windowHeight);
+
+     push();
+     scale(0.65);
+     image(rin_intera, windowWidth, windowHeight  -  500);
+     pop();
+
+     push();
+     scale(0.65);
+     image(himeros, 70, windowHeight  -  550);
+     pop();
+
    }
 
 
@@ -1145,6 +1165,12 @@ function chiudifile(){
  function travel_diversity(){
 
    diversity = true;
+
+ }
+
+ function go(){
+
+   go_on = 17;
 
  }
 
