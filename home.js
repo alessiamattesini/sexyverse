@@ -16,6 +16,9 @@ var info_revolution = false;
 var rev_1 =  false;
 var rev_2 =  false;
 
+var travel = false;
+var diversity = false;
+
 var fade = 0;
 var fadeAmount = 1;
 
@@ -52,6 +55,8 @@ function setup() {
   page_2 = loadImage("./assets/img/page_2.png");
   alert_1 = loadImage("./assets/img/alert.png");
   alert_2 = loadImage("./assets/img/alert_2.png");
+  //mappa = loadImage("./assets/img/mappa.png");
+  diversity_land = loadImage("./assets/img/diversity_land.png");
   //albtn_1 = loadImage("./assets/img/albtn_1.png");
   //albtn_2 = loadImage("./assets/img/albtn_2.png");
 
@@ -156,6 +161,32 @@ function setup() {
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
 
+  ///////////////////////////////// MENU
+   menu = createImg("./assets/img/menu.png");
+   menu.position(windowWidth - 40 - 93*0.75, 40);
+   menu.size(93 * 0.75, 93 * 0.75);
+   //menu.style('filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));');
+   //menu.mousePressed(open_menu);
+   menu.show();
+  //
+   menu_glow = createImg("./assets/img/menu_glow.png");
+   menu_glow.position(windowWidth - 40 - 93*0.75, 40 + (163 - 93)/2);
+   menu_glow.size(93 * 0.75, 93 * 0.75);
+   menu_glow.style('filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));');
+   menu_glow.mousePressed(open_menu);
+   menu_glow.hide();
+  //
+   icona_mappa = createImg("./assets/img/icona_mappa.png");
+   icona_mappa.position(windowWidth - 40 - 93*0.75, 40 + 93*0.75 + 50);
+   icona_mappa.size(93 * 0.75, 93 * 0.75);
+   icona_mappa.mousePressed(open_mappa);
+   icona_mappa.hide();
+
+   mappa = createImg("./assets/img/mappa.png");
+   mappa.position(0, 0);
+   mappa.size(windowWidth, windowHeight);
+   mappa.mousePressed(travel_diversity);
+   mappa.hide();
 
 }
 
@@ -324,9 +355,11 @@ function draw() {
     //CHARACTER
     //image(studio_rin, 0, 0, windowWidth, windowHeight);
 
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+
     push();
-    scale(0.5);
-    image(rin_talk, windowWidth + 200, windowHeight  -  996/6);
+    scale(0.65);
+    image(rin_intera, windowWidth - 70, windowHeight  -  500);
     pop();
 
 
@@ -372,8 +405,8 @@ function draw() {
     //image(studio_rin, 0, 0, windowWidth, windowHeight);
 
     push();
-    scale(0.5);
-    image(rin_talk, windowWidth + 200, windowHeight  -  996/6);
+    scale(0.65);
+    image(rin_intera, windowWidth - 70, windowHeight  -  500);
     pop();
 
 
@@ -906,6 +939,41 @@ function draw() {
 
   }
 
+   if(go_on == 16){
+
+     image(archivio, 0, 0, windowWidth, windowHeight);
+
+     push();
+     fill('rgba(0, 0, 0, 0.5)');
+     rect(0,  0, windowWidth, windowHeight);
+     pop();
+
+     menu.hide();
+     menu_glow.show();
+
+     posso_andare = false;
+
+   }
+
+   if(travel == true){
+
+   //image(mappa, 0, 0, windowWidth, windowHeight);
+   menu_glow.hide();
+   mappa.show();
+   icona_mappa.position(windowWidth - 40 - 93*0.75, 40);
+
+
+   }
+
+   if(diversity == true){
+
+     menu_glow.hide();
+     mappa.hide();
+     image(diversity_land, 0, 0, windowWidth, windowHeight);
+     icona_mappa.hide();
+
+   }
+
 
 }
 
@@ -1008,7 +1076,6 @@ function myCheckedEvent() {
 
 
 
-//////CAPIRE DOMATTINA COME MAI NON FUNZIONA
 function mouseDragged() {
 
 
@@ -1061,6 +1128,25 @@ function chiudifile(){
   info_totem = true;
 
 }
+
+
+ function open_menu(){
+
+   icona_mappa.show();
+
+ }
+
+ function open_mappa(){
+
+   travel = true;
+
+ }
+
+ function travel_diversity(){
+
+   diversity = true;
+
+ }
 
 //window resize
 
