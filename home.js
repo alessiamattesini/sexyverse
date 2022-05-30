@@ -47,6 +47,7 @@ function setup() {
   welcome = createImg("./assets/img/WELCOME.png");
   welcome.position(0,0);
   welcome.show();
+  welcome.size(windowWidth, windowHeight);
 
   vision = loadImage("./assets/img/Vision.png");
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
@@ -110,17 +111,18 @@ function setup() {
   //write your name
   yourname = createInput();
   yourname.style("color: #ffffff; background:rgba(224, 254, 104, 0.3); border-radius: 50px; border: 1px solid #E0FE68; width: 244px; height: 43px; padding-left: 10px; font-size: 15px;text-align: center; font-family:Nunito;");
-  yourname.position((windowWidth / 2)-244/2, windowHeight/2);
+  yourname.position((windowWidth / 2)-244/2, (windowHeight/2)+20);
 
-  write = createP("Your name");
-  write.position(windowWidth/2 - 100, windowHeight/3);
-  write.style("color:white; font-size:30px; font-weight: bold;");
+  //write = createP("Your name");
+  //write.position(windowWidth/2 - 100, windowHeight/3);
+  //write.style("color:white; font-size:30px; font-weight: bold;");
 
   //submit
   button = createButton('lets go');
   button.style("border-radius: 50px; border: 1px solid #E0FE68; width: 244px; height: 43px; padding-left: 10px; font-size: 15px; font-family:Nunito;");
-  button.position(windowWidth/2 - 244/2, windowHeight/2 + 100);
+  button.position((windowWidth/2) - 234/2, (windowHeight/2) + 100);
   button.mousePressed(name);
+
 
   checkbox = createCheckbox('I accept the sexy rulez <3', false);
   checkbox.position((width/2) - checkbox.width/9, height * 8 / 12 - 60);
@@ -183,6 +185,7 @@ function draw() {
   //video chapter 1
   if(start == true && video == true && go_on == 0){
 
+    button.hide();
     welcome.hide();
     image(chapter_1, 0, 0, windowWidth, windowHeight);
 
