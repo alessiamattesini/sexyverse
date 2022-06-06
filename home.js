@@ -49,7 +49,7 @@ function setup() {
   welcome.show();
   welcome.size(windowWidth, windowHeight);
 
-  vision = loadImage("./assets/img/Vision.png");
+  //vision = loadImage("./assets/img/Vision.png");
   rin_worried = loadImage("./assets/img/characters/Rin_worried.png");
   rin_talk = loadImage("./assets/img/characters/rin_talk.png");
   studio_rin = loadImage("./assets/img/studio_rin.png");
@@ -98,8 +98,13 @@ function setup() {
   albtn_2.mousePressed(next_rev2);
   albtn_2.hide();
 
-  chapter_1 = createVideo("./assets/video/segnaposto.mp4");
-  chapter_1.hide();
+  // chapter_1 = createVideo("./assets/video/segnaposto.mp4");
+  // chapter_1.hide();
+
+  chapter_1 = loadImage("./assets/img/chapter_1.png");
+  vision = createVideo("./assets/video/rin_vision.mp4");
+  vision.hide();
+
 
 
   //about
@@ -193,10 +198,23 @@ function draw() {
 
   if(press == true && go_on == 0){
 
-    fill('#E0FE68');
-    textAlign(CENTER);
-    textSize(20);
-    text("press ENTER to go on", windowWidth/2, windowHeight/2);
+    if (fade < 10 ){
+      fadeAmount = 3;
+    }
+    if (fade > 255){
+      fadeAmount = -3;
+    }
+    fade += fadeAmount;
+   // console.log(fade);
+
+   push();
+   enter = "Press ENTER to go on";
+   textFont('Nunito');
+   textAlign(CENTER);
+   fill(212, 255, 164, fade);
+   textSize(30);
+   text(enter, windowWidth/2, windowHeight - 170);
+   pop();
 
   }
 
@@ -208,10 +226,13 @@ function draw() {
     //segnaposto per il video della visione
 
     image(vision, 0, 0, windowWidth, windowHeight);
-    fill('#E0FE68');
-    textAlign(CENTER);
-    textSize(20);
-    text("Qui in realtà ci starebbe il video della visione di Rin", windowWidth/2, windowHeight/2);
+    menu.hide();
+    visione_vai();
+    //vision.loop();
+    // fill('#E0FE68');
+    // textAlign(CENTER);
+    // textSize(20);
+    // text("Qui in realtà ci starebbe il video della visione di Rin", windowWidth/2, windowHeight/2);
 
     press = false;
     video = false;
@@ -225,7 +246,7 @@ function draw() {
 
   if(go_on == 2){
 
-
+    menu.show();
     //CHARACTER
     image(studio_rin, 0, 0, windowWidth, windowHeight);
 
@@ -1218,7 +1239,7 @@ function draw() {
     textAlign(CENTER);
     fill('rgba(212, 255, 164, 1)');
     textSize(30);
-    text(enter, windowWidth/2, windowHeight - 150);
+    text(enter, windowWidth/2, windowHeight - 100);
     pop();
 
 
@@ -1282,9 +1303,9 @@ function mousePressed(){
   if(start == true){
 
     logo_sexy.hide();
-    chapter_1.play();
+    //chapter_1.play();
     video = true;
-    setTimeout(premi, 7000);
+    premi();
 
   }
 
@@ -1309,6 +1330,13 @@ function premi(){
 
   press = true;
 
+
+}
+
+function visione_vai(){
+
+  //vision.play();
+  console.log("qui dovrebbe partire il video")
 
 }
 
