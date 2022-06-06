@@ -34,12 +34,15 @@ function setup() {
 
 
   //submit
-  button = createButton('Lets go');
+  button = createButton('lets go');
   larghezza = button.width;
   button.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 244px; height: 43px; padding-left: 10px; font-size: 20px; font-family:Nunito;");
   button.position(windowWidth / 2, windowHeight*4/5);
   button.center('horizontal');
   button.mousePressed(name);
+
+  //pronouns
+  
 
 
 
@@ -53,7 +56,7 @@ function draw() {
     image(welcome_page, 0, 0, windowWidth, windowHeight);
 
     push();
-    insert = "Write your name:";
+    insert = "write your name";
     textFont('Nunito');
     textAlign(CENTER);
     fill('#D4FFA4');
