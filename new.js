@@ -45,6 +45,13 @@ function setup() {
   button.center('horizontal');
   button.mousePressed(name);
 
+
+  let account = createP('@fabolousrin');
+  account.style('color:rgba(252, 252, 167, 1); font-size: 20px; font-family: Nunito;');
+  account.position(windowWidth/10 + 50, windowHeight - 173 + 20);
+  //account.center('horizontal');
+  account.hide();
+
   // //pronouns
   // she = createButton('she/her');
   // she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
@@ -210,10 +217,14 @@ function draw() {
     text(enter, windowWidth/10 + 50, windowHeight - 223);
     pop();
 
+    //noLoop();
 
   }
 
   if(go_on == 2){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(rin_worried, windowWidth * 3/5 , windowHeight - rin_worried.width/2, rin_worried.width/2, rin_worried.height/2 );
 
     //TEXT BOX
     push();
@@ -241,6 +252,170 @@ function draw() {
     //TEXT
     push();
     text_box = "...man I really have to stop with flower infusions at night, they f**k up my head.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 3){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Oh, hi " + player_name + "! I didn’t see you there! You must excuse me, but I just had the weirdest vision...";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 4){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Let me introduce myself. My name is Rin, I live in Privacy Land and I work for the government.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 4){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "I am a the guardian of Sexyverse top secret archives. As you can tell, privacy is my speciality!";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 5){
+
+    image(rin_lab, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Wanna learn more hot stuff about me? Check out my IG account @fabolousrin, you won’t regret it!";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
