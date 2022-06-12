@@ -132,6 +132,7 @@ function setup() {
   condom_bin = createImg("./assets_new/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
+  condom_bin.doubleClicked(win_error);
   condom_bin.hide();
 
   hazard = createImg("./assets_new/img/hazard.png");
@@ -169,6 +170,10 @@ function setup() {
   chiudi.size(1920 * 0.75, 1080 * 0.75);
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
+
+  /////////////AUDIO
+  suono = loadSound('./assets_new/audio/Windows_error.mp3');
+  suono.stop();
 
 
 }
@@ -1056,7 +1061,7 @@ function draw() {
 
   if(go_on == 15){
 
-    posso_andare  = false;
+    press_enter  = false;
     image(archive, 0, 0, windowWidth, windowHeight);
 
 ////////////////black layer
@@ -1160,7 +1165,7 @@ function draw() {
 
     if(info_totem == true && info_revolution == true){
 
-      posso_andare = true;
+      press_enter = true;
 
       if (fade < 10 ){
         fadeAmount = 3;
@@ -1172,7 +1177,7 @@ function draw() {
      // console.log(fade);
 
      push();
-     enter = "If you're okay press ENTER to go on";
+     enter = "When you're okay press ENTER to go on";
      textFont('Nunito');
      textAlign(CENTER);
      fill(212, 255, 164, fade);
@@ -1185,7 +1190,91 @@ function draw() {
 
   }
 
+  if(go_on == 16){
 
+    folder.hide();
+    condom_bin.hide();
+    hazard.hide();
+
+    image(archive, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Holy pussies! " + player_name +" thank you for your precious help! I think we might be in trouble...";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 17){
+
+    image(archive, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Someone will soon get the lost awkwardness totem and activate the G-spot legend!";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
 
 
 }
@@ -1275,6 +1364,12 @@ function chiudifile(){
   totem_pdf2 = false;
   chiudi.hide();
   info_totem = true;
+
+}
+
+function win_error(){
+
+  suono.play();
 
 }
 
