@@ -13,7 +13,12 @@ var fadeAmount = 1;
 //DESKTOP variabili
 
 var totem_pdf = false;
-var next_rev = false;
+var totem_pdf2 = false;
+var info_totem = false;
+var info_revolution = false;
+//var next_rev = false;
+var rev_1 = false;
+var rev_2 = false;
 
 
 function preload() {
@@ -134,6 +139,36 @@ function setup() {
   hazard.size(165 * 0.6, 163 * 0.6);
   hazard.doubleClicked(revolution);
   hazard.hide();
+
+
+  page_1 = loadImage("./assets_new/img/desktop_contents/page_1.png");
+  page_2 = loadImage("./assets_new/img/desktop_contents/page_2.png");
+  alert_1 = loadImage("./assets_new/img/desktop_contents/alert.png");
+  alert_2 = loadImage("./assets_new/img/desktop_contents/alert_2.png");
+
+  albtn_1 = createImg("./assets_new/img/desktop_contents/albtn_1.png");
+  albtn_1.position(0, 0);
+  albtn_1.size(1920 * 0.75, 1080 * 0.75);
+  albtn_1.mousePressed(next_rev);
+  albtn_1.hide();
+
+  albtn_2 = createImg("./assets_new/img/desktop_contents/albtn_2.png");
+  albtn_2.position(0, 0);
+  albtn_2.size(1920 * 0.75, 1080 * 0.75);
+  albtn_2.mousePressed(next_rev2);
+  albtn_2.hide();
+
+  next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
+  next_page.position(0, 0);
+  next_page.size(1920 * 0.75, 1080 * 0.75);
+  next_page.mousePressed(page);
+  next_page.hide();
+
+  chiudi = createImg("./assets_new/img/desktop_contents/chiudi_libro.png");
+  chiudi.position(0, 0);
+  chiudi.size(1920 * 0.75, 1080 * 0.75);
+  chiudi.mousePressed(chiudifile);
+  chiudi.hide();
 
 
 }
@@ -1021,6 +1056,7 @@ function draw() {
 
   if(go_on == 15){
 
+    posso_andare  = false;
     image(archive, 0, 0, windowWidth, windowHeight);
 
 ////////////////black layer
@@ -1061,6 +1097,91 @@ function draw() {
     fill('white');
     text(label_3, windowWidth/2, windowHeight/2 + 80, 179 * 0.6, 156 * 0.6);
     pop();
+
+    if(totem_pdf == true){
+
+      folder.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      next_page.show();
+
+      push();
+      scale(0.75);
+      image(page_1, 0, 0);
+      pop();
+
+    }
+
+    if(totem_pdf2 == true){
+
+      totem_pdf = false;
+      folder.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      next_page.hide();
+      chiudi.show();
+
+      push();
+      scale(0.75);
+      image(page_2, 0, 0);
+      pop();
+
+    }
+
+    if(rev_1 == true){
+
+      folder.hide();
+
+      push();
+      scale(0.75);
+      image(alert_1, 0, 0);
+      pop();
+
+      albtn_1.show();
+
+    }
+
+    if(rev_2 == true){
+
+      folder.hide();
+
+      push();
+      scale(0.75);
+      image(alert_1, 0, 0);
+      image(alert_2, 0, 0);
+      pop();
+
+      albtn_1.show();
+      albtn_2.show();
+
+    }
+
+    if(info_totem == true && info_revolution == true){
+
+      posso_andare = true;
+
+      if (fade < 10 ){
+        fadeAmount = 3;
+      }
+      if (fade > 255){
+        fadeAmount = -3;
+      }
+      fade += fadeAmount;
+     // console.log(fade);
+
+     push();
+     enter = "If you're okay press ENTER to go on";
+     textFont('Nunito');
+     textAlign(CENTER);
+     fill(212, 255, 164, fade);
+     textSize(30);
+     text(enter, windowWidth/2 , windowHeight * 6/7);
+     pop();
+
+
+    }
 
   }
 
@@ -1126,6 +1247,37 @@ function revolution(){
   rev_1 = true;
 
 }
+
+function next_rev(){
+
+  rev_2 = true;
+
+}
+
+function next_rev2(){
+
+  rev_1 = false;
+  rev_2 = false;
+  info_revolution = true;
+  albtn_1.hide();
+  albtn_2.hide();
+
+}
+
+function page(){
+
+  totem_pdf2 = true;
+
+}
+
+function chiudifile(){
+
+  totem_pdf2 = false;
+  chiudi.hide();
+  info_totem = true;
+
+}
+
 
 //window resize
 function windowResized() {
