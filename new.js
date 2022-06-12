@@ -533,7 +533,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = player_name +"... I might be going nuts, but this vision gave me the chills, I swear!";
+    text_box = player_name + "... I might be going nuts, but this vision gave me the chills, I swear!";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -1022,7 +1022,6 @@ function draw() {
   if(go_on == 15){
 
     image(archive, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
 
 ////////////////black layer
     push();
