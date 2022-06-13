@@ -17,6 +17,7 @@ var totem_pdf2 = false;
 var info_totem = false;
 var info_revolution = false;
 var vip_nudes = false;
+var nudino = 0;
 var rev_1 = false;
 var rev_2 = false;
 
@@ -160,6 +161,7 @@ function setup() {
   alert_1 = loadImage("./assets_new/img/desktop_contents/alert.png");
   alert_2 = loadImage("./assets_new/img/desktop_contents/alert_2.png");
   siriobabashi = loadImage("./assets_new/img/desktop_contents/siriobabashi.png");
+  elizabeth = loadImage("./assets_new/img/desktop_contents/elizabeth.png");
 
   albtn_1 = createImg("./assets_new/img/desktop_contents/albtn_1.png");
   albtn_1.position(0, 0);
@@ -184,6 +186,43 @@ function setup() {
   chiudi.position(windowWidth * 3/4 , windowHeight/25);
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
+
+  next_nude = createImg("./assets_new/img/desktop_contents/avanti_libro.png");
+  next_nude.position(windowWidth * 3/4 , windowHeight/25);
+  next_nude.center('vertical');
+  next_nude.mousePressed(() => {
+
+    if(nudino < 1){
+
+      nudino++;
+
+    } else {
+
+      nudino--;
+
+    }
+
+
+  });
+  next_nude.hide();
+
+  prev_nude = createImg("./assets_new/img/desktop_contents/indietro_libro.png");
+  prev_nude.position(windowWidth/4 , windowHeight/25);
+  prev_nude.center('vertical');
+  prev_nude.mousePressed(() => {
+
+    if(nudino >  0){
+
+        nudino --;
+
+    } else {
+
+        nudino++;
+
+    }
+
+  });
+  prev_nude.hide();
 
   /////////////AUDIO
   suono = loadSound('./assets_new/audio/Windows_error.mp3');
@@ -1131,6 +1170,7 @@ function draw() {
     if(totem_pdf == true){
 
       folder.hide();
+      folder2.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1195,26 +1235,42 @@ function draw() {
       condom_bin.hide();
       hazard.hide();
       chiudi.show();
+      prev_nude.show();
+      next_nude.show();
 
       image(archive, 0, 0, windowWidth, windowHeight);
 
-      push();
-      fill('rgba(0, 0, 0, 0.5)');
-      rect(0,  0, windowWidth, windowHeight);
-      pop();
+      if(nudino == 0){
 
-      push();
-      imageMode(CENTER);
-      image(siriobabashi, windowWidth/2, windowHeight/2);
-      //image(alert_2, 0, 0);
-      pop();
+        push();
+        fill('rgba(0, 0, 0, 0.5)');
+        rect(0,  0, windowWidth, windowHeight);
+        pop();
 
-      // if(mousePressed){
-      //
-      //   vip_nudes = false;
-      //   console.log("yo funziono");
-      //
-      // }
+        push();
+        imageMode(CENTER);
+        image(siriobabashi, windowWidth/2, windowHeight/2);
+        pop();
+
+
+      }
+
+
+      if(nudino == 1){
+
+        push();
+        fill('rgba(0, 0, 0, 0.5)');
+        rect(0,  0, windowWidth, windowHeight);
+        pop();
+
+        push();
+        imageMode(CENTER);
+        image(elizabeth, windowWidth/2, windowHeight/2);
+        pop();
+
+
+      }
+
 
     }
 
@@ -1250,6 +1306,7 @@ function draw() {
     folder.hide();
     condom_bin.hide();
     hazard.hide();
+    folder2.hide();
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1518,6 +1575,7 @@ function apri_cartella2(){
 function revolution(){
 
   rev_1 = true;
+  //suono.play();
 
 }
 
@@ -1549,6 +1607,8 @@ function chiudifile(){
   vip_nudes = false;
   chiudi.hide();
   info_totem = true;
+  prev_nude.hide();
+  next_nude.hide();
 
 }
 
