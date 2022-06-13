@@ -16,7 +16,7 @@ var totem_pdf = false;
 var totem_pdf2 = false;
 var info_totem = false;
 var info_revolution = false;
-//var next_rev = false;
+var vip_nudes = false;
 var rev_1 = false;
 var rev_2 = false;
 
@@ -44,8 +44,8 @@ function setup() {
   /////////////////////////////////////////WELCOME PAGE
 
   about = createP("about");
-  about.position(windowWidth - 100, 45);
-  about.style("color:rgba(212, 255, 164, 1); font-size:20px; font-family:Nunito;");
+  about.position(windowWidth - 100, 5);
+  about.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito;");
   about.mouseOver(about_over);
   about.mouseOut(about_out);
   about.mousePressed(about_page);
@@ -136,6 +136,12 @@ function setup() {
   folder.size(179 * 0.6, 156 * 0.6);
   folder.hide();
 
+  folder2 = createImg("./assets_new/img/folder.png");
+  folder2.position(windowWidth/3, windowHeight* 3/4);
+  folder2.doubleClicked(apri_cartella2);
+  folder2.size(179 * 0.6, 156 * 0.6);
+  folder2.hide();
+
   condom_bin = createImg("./assets_new/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
@@ -168,13 +174,13 @@ function setup() {
 
   next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
   next_page.position(0, 0);
-  next_page.size(1920 * 0.75, 1080 * 0.75);
+  //next_page.size(1920 * 0.75, 1080 * 0.75);
   next_page.mousePressed(page);
   next_page.hide();
 
   chiudi = createImg("./assets_new/img/desktop_contents/chiudi_libro.png");
-  chiudi.position(0, 0);
-  chiudi.size(1920 * 0.75, 1080 * 0.75);
+  //chiudi.size(chiudi.width * 0.75, chiudi.height * 0.75);
+  chiudi.position(page_2.width, windowHeight/4);
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
 
@@ -1083,6 +1089,7 @@ function draw() {
     condom_bin.show();
     folder.show();
     hazard.show();
+    folder2.show();
 
     push();
     label_1 =  "condom bin";
@@ -1111,6 +1118,15 @@ function draw() {
     text(label_3, windowWidth/2, windowHeight/2 + 80, 179 * 0.6, 156 * 0.6);
     pop();
 
+    push();
+    label_4 =  "VIP_nudes.jpg";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_4, windowWidth/3, windowHeight * 3/4 + 80, 179 * 0.6, 156 * 0.6);
+    pop();
+
     if(totem_pdf == true){
 
       folder.hide();
@@ -1120,8 +1136,8 @@ function draw() {
       next_page.show();
 
       push();
-      scale(0.75);
-      image(page_1, 0, 0);
+      //scale(0.75);
+      image(page_1, windowWidth/2 - page_1.width/2, windowHeight/2 - page_1.height/2);
       pop();
 
     }
@@ -1137,8 +1153,8 @@ function draw() {
       chiudi.show();
 
       push();
-      scale(0.75);
-      image(page_2, 0, 0);
+      //scale(0.75);
+      image(page_2, windowWidth/2 - page_2.width/2, windowHeight/2 - page_2.height/2);
       pop();
 
     }
@@ -1462,6 +1478,13 @@ function apri_cartella(){
 
 }
 
+function apri_cartella2(){
+
+  console.log("l'ho aperta");
+  vip_nudes =  true;
+
+}
+
 function revolution(){
 
   rev_1 = true;
@@ -1518,7 +1541,7 @@ function win_error(){
 
  function about_out(){
 
-   about.style("color:rgba(212, 255, 164, 1); font-size:20px; font-family:Nunito; text-decoration: none;");
+   about.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito; text-decoration: none;");
 
  }
 

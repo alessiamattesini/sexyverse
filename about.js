@@ -6,7 +6,7 @@ function setup() {
   welcome = createImg("./assets_new/img/WELCOME.png");
 
 
-  text = createP("Siamo molto carine");
+  text = createP("Siamo molto karyne");
   text.position(windowWidth/2 - 100, windowHeight/3);
   text.style("color:white; font-size:30px; font-weight: bold;");
   text.center();
