@@ -159,6 +159,7 @@ function setup() {
   page_2 = loadImage("./assets_new/img/desktop_contents/page_2.png");
   alert_1 = loadImage("./assets_new/img/desktop_contents/alert.png");
   alert_2 = loadImage("./assets_new/img/desktop_contents/alert_2.png");
+  siriobabashi = loadImage("./assets_new/img/desktop_contents/siriobabashi.png");
 
   albtn_1 = createImg("./assets_new/img/desktop_contents/albtn_1.png");
   albtn_1.position(0, 0);
@@ -1187,6 +1188,36 @@ function draw() {
 
     }
 
+    if(vip_nudes == true){
+
+      folder2.hide();
+      folder.hide();
+      condom_bin.hide();
+      hazard.hide();
+      chiudi.show();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
+
+      push();
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
+      pop();
+
+      push();
+      imageMode(CENTER);
+      image(siriobabashi, windowWidth/2, windowHeight/2);
+      //image(alert_2, 0, 0);
+      pop();
+
+      // if(mousePressed){
+      //
+      //   vip_nudes = false;
+      //   console.log("yo funziono");
+      //
+      // }
+
+    }
+
     if(info_totem == true && info_revolution == true){
 
       press_enter = true;
@@ -1206,7 +1237,7 @@ function draw() {
      textAlign(CENTER);
      fill(212, 255, 164, fade);
      textSize(30);
-     text(enter, windowWidth/2 , windowHeight * 6/7);
+     text(enter, windowWidth/2 , windowHeight/6);
      pop();
 
 
@@ -1480,7 +1511,6 @@ function apri_cartella(){
 
 function apri_cartella2(){
 
-  console.log("l'ho aperta");
   vip_nudes =  true;
 
 }
@@ -1516,6 +1546,7 @@ function page(){
 function chiudifile(){
 
   totem_pdf2 = false;
+  vip_nudes = false;
   chiudi.hide();
   info_totem = true;
 
