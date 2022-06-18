@@ -10,6 +10,11 @@ var press_enter = false;
 var fade = 0;
 var fadeAmount = 1;
 
+var she_pr = false;
+var he_pr = false;
+var they_pr = false;
+var ze_pr = false;
+
 //DESKTOP variabili
 
 var totem_pdf = false;
@@ -23,6 +28,8 @@ var rev_2 = false;
 
 //////viaggio
 var travel = false;
+var diversity_land = false;
+
 
 
 function preload() {
@@ -38,6 +45,7 @@ function setup() {
   welcome_page = loadImage("./assets_new/img/WELCOME.png");
   rin_lab = loadImage("./assets_new/img/rin_lab.png");
   archive_door = loadImage("./assets_new/img/archive_door.png");
+  mappa = loadImage("./assets_new/img/mappa.png");
   archive = loadImage("./assets_new/img/archive.png");
   star_S = loadImage("./assets_new/img/star_S.png");
   star_M = loadImage("./assets_new/img/star_M.png");
@@ -76,34 +84,132 @@ function setup() {
   account.hide();
 
   // //pronouns
-  // she = createButton('she/her');
-  // she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-  // she.position(windowWidth/5 - 80, windowHeight * 2 / 3);
-  // she.mouseOver(im_over);
-  // she.mouseOut(im_out);
-  // //she.mousePressed(she_select);
-  //
-  // he = createButton('he/him');
-  // he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+   she = createButton('she/her');
+   she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+   she.position(windowWidth/5 - 80, windowHeight * 2 / 3);
+   she.mouseOver(() => {
+
+     she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+
+   });
+
+   she.mouseOut( () => {
+
+     if(she_pr == false){
+       she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     }
+   });
+
+   she.mousePressed( () => {
+
+     she_pr = true;
+     he_pr = false;
+     they_pr = false;
+     ze_pr = false;
+     she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+
+
+   he = createButton('he/him');
+   he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
   // he.class('he_pron');
-  // he.position(windowWidth *  2/5 - 80, windowHeight * 2 / 3);
-  // he.mouseOver(im_over1);
-  // he.mouseOut(im_out1);
-  // he.mousePressed(he_select);
-  //
-  // they = createButton('they/them');
-  // they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-  // they.class('he_pron');
-  // they.position(windowWidth *  3/5 - 80, windowHeight * 2 / 3);
-  // they.mouseOver(im_over2);
-  // they.mouseOut(im_out2);
-  //
-  // ze = createButton('ze/zir');
-  // ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-  // ze.class('he_pron');
-  // ze.position(windowWidth *  4/5 - 80, windowHeight * 2 / 3);
-  // ze.mouseOver(im_over3);
-  // ze.mouseOut(im_out3);
+   he.position(windowWidth *  2/5 - 80, windowHeight * 2 / 3);
+   he.mouseOver( () => {
+
+     he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+   he.mouseOut( () => {
+
+     if(he_pr == false) {
+       he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     }
+
+   });
+
+   he.mousePressed( () => {
+
+     she_pr = false;
+     he_pr = true;
+     they_pr = false;
+     ze_pr = false;
+
+     she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+
+   they = createButton('they/them');
+   they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+   they.position(windowWidth *  3/5 - 80, windowHeight * 2 / 3);
+   they.mouseOver(() => {
+
+     they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+
+   they.mouseOut(() => {
+
+     if(they_pr == false){
+       they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     }
+
+   });
+
+   they.mousePressed( () => {
+
+     she_pr  = false;
+     he_pr = false;
+     they_pr = true;
+     ze_pr = false;
+
+     she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+
+
+   ze = createButton('ze/zir');
+   ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+   ze.position(windowWidth *  4/5 - 80, windowHeight * 2 / 3);
+   ze.mouseOver(() => {
+
+     ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
+
+   ze.mouseOut(() => {
+
+     if(ze_pr == false){
+
+       ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+     }
+
+   });
+
+   ze.mousePressed( () => {
+
+     she_pr =  false;
+     he_pr = false;
+     they_pr = false;
+     ze_pr = true;
+
+     she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+     ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
+
+   });
 
 
 /////CHAPTER 1
@@ -244,15 +350,25 @@ function setup() {
    icona_mappa.hide();
 
    menu_glow = createImg("./assets_new/img/menu_glow.png");
-   menu_glow.position(windowWidth - 40 - 93*0.75, 40 + (163 - 93)/2);
+   menu_glow.position(windowWidth - 40 - 93*0.75, 40);
    menu_glow.size(93 * 0.75, 93 * 0.75);
    menu_glow.style('filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));');
    menu_glow.mousePressed(()=> {
 
      icona_mappa.show();
+     menu.show();
+     menu_glow.hide();
 
    });
    menu_glow.hide();
+
+   ////////mappa
+
+   // mappa = createImg("./assets_new/img/mappa.png");
+   // mappa.position(0, 0);
+   // mappa.size(windowWidth, windowHeight);
+   // //mappa.mousePressed(travel_diversity);
+   // mappa.hide();
 
 
 
@@ -286,6 +402,10 @@ function draw() {
   if(start == true && go_on == 0){
 
     menu.hide();
+    she.hide();
+    he.hide();
+    they.hide();
+    ze.hide();
 
     image(chapter_1, 0, 0, windowWidth, windowHeight);
     about.hide();
@@ -1336,7 +1456,7 @@ function draw() {
      textFont('Nunito');
      textAlign(CENTER);
      fill(212, 255, 164, fade);
-     textSize(30);
+     textSize(20);
      text(enter, windowWidth/2 , windowHeight/6);
      pop();
 
@@ -1556,6 +1676,57 @@ function draw() {
 
   }
 
+  if(go_on == 21){
+
+    menu_glow.show();
+    menu.hide();
+    press_enter = false;
+
+    image(archive, 0, 0, windowWidth, windowHeight);
+
+    push();
+    fill('rgba(0, 0, 0, 0.5)');
+    rect(0,  0, windowWidth, windowHeight);
+    pop();
+
+    if (fade < 10 ){
+      fadeAmount = 3;
+    }
+    if (fade > 255){
+      fadeAmount = -3;
+    }
+    fade += fadeAmount;
+
+   push();
+   enter = "Let's go to Himeros";
+   textFont('Nunito');
+   textAlign(CENTER);
+   fill(212, 255, 164, fade);
+   textSize(30);
+   text(enter, windowWidth/2, windowHeight/2);
+   pop();
+
+
+  }
+
+  if(travel == true){
+
+    //mappa.show();
+    image(mappa, 0, 0, windowWidth, windowHeight);
+    icona_mappa.position(windowWidth - 40 - 93*0.75, 40);
+    menu.hide();
+    menu_glow.hide();
+
+     // push();
+     // //fill('rgba(0, 0, 0, 0)');
+     // fill('rgba(0, 0, 0, 0.5)');
+     // noStroke();
+     // rect(windowWidth/5, windowHeight/3, windowWidth/12, windowHeight/6);
+     // pop();
+
+
+  }
+
 
 }
 
@@ -1681,6 +1852,22 @@ function win_error(){
 
  }
 
+ function mousePressed(){
+
+   var x = windowWidth/5;
+   var y = windowHeight/3;
+   var w = windowWidth/8;
+   var h = windowHeight/6;
+
+       if(travel == true && (mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
+
+         var diversity_land = true;
+         console.log("trolololol");
+
+       }
+
+ }
+
 
 //window resize
 function windowResized() {
@@ -1689,62 +1876,3 @@ function windowResized() {
   background('black');
 
 }
-
-// function im_over(){
-//
-//   she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_out(){
-//
-//   she.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_over1(){
-//
-//   he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_out1(){
-//
-//   he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_over2(){
-//
-//   they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_out2(){
-//
-//   they.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_over3(){
-//
-//   ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function im_out3(){
-//
-//   ze.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-//
-// }
-//
-// function he_select(){
-//
-//   he = true;
-//   she = false;
-//   ze = false;
-//   they = false;
-//
-//   he.style
-//
-// }
