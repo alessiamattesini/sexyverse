@@ -21,6 +21,9 @@ var nudino = 0;
 var rev_1 = false;
 var rev_2 = false;
 
+//////viaggio
+var travel = false;
+
 
 function preload() {
 
@@ -108,7 +111,7 @@ function setup() {
   chapter_1 = createVideo('./assets_new/video/segnaposto.mp4');
   chapter_1.hide();
 
-  rin_vision = createVideo('./assets_new/video/rin-vision.mp4');
+  rin_vision = createVideo('./assets_new/video/rin-vision-2.mp4');
   rin_vision.hide();
 
 ///////////checkbox
@@ -224,6 +227,36 @@ function setup() {
   });
   prev_nude.hide();
 
+  ///////////////////////////////// MENU
+   menu = createImg("./assets_new/img/menu.png");
+   menu.position(windowWidth - 40 - 93*0.75, 40);
+   menu.size(93 * 0.75, 93 * 0.75);
+   menu.show();
+
+   icona_mappa = createImg("./assets_new/img/icona_mappa.png");
+   icona_mappa.position(windowWidth - 40 - 93*0.75, 40 + 93*0.75 + 50);
+   icona_mappa.size(93 * 0.75, 93 * 0.75);
+   icona_mappa.mousePressed(()=> {
+
+     travel = true;
+
+   });
+   icona_mappa.hide();
+
+   menu_glow = createImg("./assets_new/img/menu_glow.png");
+   menu_glow.position(windowWidth - 40 - 93*0.75, 40 + (163 - 93)/2);
+   menu_glow.size(93 * 0.75, 93 * 0.75);
+   menu_glow.style('filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));');
+   menu_glow.mousePressed(()=> {
+
+     icona_mappa.show();
+
+   });
+   menu_glow.hide();
+
+
+
+
   /////////////AUDIO
   suono = loadSound('./assets_new/audio/Windows_error.mp3');
   suono.stop();
@@ -234,6 +267,8 @@ function setup() {
 function draw() {
 
   if(start == false && go_on == 0){
+
+    menu.hide();
 
     image(welcome_page, 0, 0, windowWidth, windowHeight);
 
@@ -250,12 +285,16 @@ function draw() {
 
   if(start == true && go_on == 0){
 
+    menu.hide();
+
     image(chapter_1, 0, 0, windowWidth, windowHeight);
     about.hide();
 
   }
 
   if(iniziamo == true && go_on == 0){
+
+    menu.hide();
 
     image(rin_vision, 0, 0, windowWidth, windowHeight);
 
@@ -291,6 +330,8 @@ function draw() {
   //////AFTER RIN VISION
 
   if(go_on == 1){
+
+    menu.show();
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_worried, windowWidth * 3/5 , windowHeight - rin_worried.width/2, rin_worried.width/2, rin_worried.height/2 );
@@ -725,6 +766,7 @@ function draw() {
 
   if(go_on == 9){
 
+    menu.hide();
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
 
@@ -1057,6 +1099,7 @@ function draw() {
 
   if(go_on == 14){
 
+    menu.show();
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
 
@@ -1115,6 +1158,7 @@ function draw() {
 
   if(go_on == 15){
 
+    menu.hide();
     press_enter  = false;
     image(archive, 0, 0, windowWidth, windowHeight);
 
@@ -1303,6 +1347,7 @@ function draw() {
 
   if(go_on == 16){
 
+    menu.show();
     folder.hide();
     condom_bin.hide();
     hazard.hide();
