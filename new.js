@@ -29,6 +29,7 @@ var rev_2 = false;
 //////viaggio
 var travel = false;
 var diversity_land = false;
+var press_himeros = false;
 
 
 
@@ -77,11 +78,11 @@ function setup() {
   button.mousePressed(name);
 
 
-  let account = createP('@fabolousrin');
-  account.style('color:rgba(252, 252, 167, 1); font-size: 20px; font-family: Nunito;');
-  account.position(windowWidth/10 + 50, windowHeight - 173 + 20);
-  //account.center('horizontal');
-  account.hide();
+  // let account = createP('@fabolousrin');
+  // account.style('color:rgba(252, 252, 167, 1); font-size: 20px; font-family: Nunito;');
+  // account.position(windowWidth/10 + 50, windowHeight - 173 + 20);
+  // //account.center('horizontal');
+  // account.hide();
 
   // //pronouns
    she = createButton('she/her');
@@ -117,7 +118,6 @@ function setup() {
 
    he = createButton('he/him');
    he.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0); color: #D4FFA4; width: 160px; height: 43px; padding-left: 10px; font-size: 17px; font-family:Nunito;");
-  // he.class('he_pron');
    he.position(windowWidth *  2/5 - 80, windowHeight * 2 / 3);
    he.mouseOver( () => {
 
@@ -1717,12 +1717,39 @@ function draw() {
     menu.hide();
     menu_glow.hide();
 
-     // push();
-     // //fill('rgba(0, 0, 0, 0)');
-     // fill('rgba(0, 0, 0, 0.5)');
-     // noStroke();
-     // rect(windowWidth/5, windowHeight/3, windowWidth/12, windowHeight/6);
-     // pop();
+
+  }
+
+  if(diversity_land ==  true){
+
+    //travel = false;
+    icona_mappa.hide();
+    menu_glow.hide();
+    menu.hide();
+    image(chapter_1, 0, 0, windowWidth, windowHeight);
+
+  }
+
+  if(press_himeros  ==  true){
+
+    press_enter = true;
+
+    if (fade < 10 ){
+      fadeAmount = 3;
+    }
+    if (fade > 255){
+      fadeAmount = -3;
+    }
+    fade += fadeAmount;
+
+   push();
+   enter = "Press ENTER to go on";
+   textFont('Nunito');
+   textAlign(CENTER);
+   fill(212, 255, 164, fade);
+   textSize(30);
+   text(enter, windowWidth/2, windowHeight/2);
+   pop();
 
 
   }
@@ -1861,8 +1888,14 @@ function win_error(){
 
        if(travel == true && (mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
 
-         var diversity_land = true;
-         console.log("trolololol");
+         diversity_land = true;
+         console.log("diversity " + diversity_land);
+         chapter_1.play();
+         chapter_1.onended(() => {
+
+           press_himeros = true;
+
+         });
 
        }
 
