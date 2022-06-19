@@ -46,6 +46,7 @@ function setup() {
   welcome_page = loadImage("./assets_new/img/WELCOME.png");
   rin_lab = loadImage("./assets_new/img/rin_lab.png");
   archive_door = loadImage("./assets_new/img/archive_door.png");
+  himeros_garden = loadImage("./assets_new/img/Himeros_garden.png");
   mappa = loadImage("./assets_new/img/mappa.png");
   archive = loadImage("./assets_new/img/archive.png");
   star_S = loadImage("./assets_new/img/star_S.png");
@@ -233,11 +234,12 @@ function setup() {
   checkbox.hide();
 
 
-/////AFTER RIN Vision
+/////CHARACTER
 
   rin = loadImage("./assets_new/char/rin.png");
   rin_worried = loadImage("./assets_new/char/rin2.png");
   rin_talk = loadImage("./assets_new/char/rin3.png");
+  himeros = loadImage("./assets_new/char/himeros.png");
 
 ////////////////////ARCHIVE DESKTOP
   folder = createImg("./assets_new/img/folder.png");
@@ -1726,7 +1728,7 @@ function draw() {
     icona_mappa.hide();
     menu_glow.hide();
     menu.hide();
-    image(chapter_1, 0, 0, windowWidth, windowHeight);
+    image(chapter_1, 0, 0, windowWidth, windowHeight);  //////PLACEHOLDER
 
   }
 
@@ -1750,6 +1752,48 @@ function draw() {
    textSize(30);
    text(enter, windowWidth/2, windowHeight/2);
    pop();
+
+
+  }
+
+  if(go_on == 22){
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
+    image(himeros, windowWidth * 1/5 , windowHeight - himeros.width, himeros.width/2, himeros.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Himeros you will never guess what I saw!!! I fear the worst is about to come upon our galaxy.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
 
 
   }
