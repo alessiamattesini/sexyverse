@@ -1729,6 +1729,7 @@ function draw() {
     menu_glow.hide();
     menu.hide();
     image(chapter_1, 0, 0, windowWidth, windowHeight);  //////PLACEHOLDER
+    travel  =  false;
 
   }
 
@@ -1759,8 +1760,8 @@ function draw() {
   if(go_on == 22){
 
     image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/5 , windowHeight - himeros.width, himeros.width/2, himeros.height/2 );
+    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
+    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
 
     //TEXT BOX
     push();
