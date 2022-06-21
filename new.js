@@ -33,26 +33,19 @@ var press_himeros = false;
 
 //NUDINI
 
-let popups = [];
-let nudinosalvato;
-let nudini = [];
-let salviamoinudini = false;
-let counter_nudini = 0;
+// let popups = [];
+// let nudinosalvato;
+// let nudini = [];
+// let salviamoinudini = false;
+// let counter_nudini = 0;
 
 
 function preload() {
 
-  nudinosalvato = loadImage('./assets_new/img/nudini/stellona.png');
-   for (let i = 0; i < 15; i++){
-    nudini[i] = loadImage ('./assets_new/img/nudini/nudino' + i + '.png');
-  }
-
-}
-
-
-function setup() {
-
-  createCanvas(windowWidth, windowHeight);
+  // nudinosalvato = loadImage('./assets_new/img/nudini/stellona.png');
+  //  for (let i = 0; i < 15; i++){
+  //   nudini[i] = loadImage ('./assets_new/img/nudini/nudino' + i + '.png');
+  // }
 
   //IMMAGINI SFONDI
   welcome_page = loadImage("./assets_new/img/WELCOME.png");
@@ -68,6 +61,23 @@ function setup() {
   star_M_hi = loadImage("./assets_new/img/star_M_hi.png");
   sfondo_nudini = loadImage("./assets_new/img/sfondo_nudini.png");
 
+  qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
+
+
+
+  /////CHARACTER
+
+    rin = loadImage("./assets_new/char/rin.png");
+    rin_worried = loadImage("./assets_new/char/rin2.png");
+    rin_talk = loadImage("./assets_new/char/rin3.png");
+    himeros = loadImage("./assets_new/char/himeros.png");
+
+}
+
+
+function setup() {
+
+  createCanvas(windowWidth, windowHeight);
 
 
 
@@ -94,12 +104,6 @@ function setup() {
   button.center('horizontal');
   button.mousePressed(name);
 
-
-  // let account = createP('@fabolousrin');
-  // account.style('color:rgba(252, 252, 167, 1); font-size: 20px; font-family: Nunito;');
-  // account.position(windowWidth/10 + 50, windowHeight - 173 + 20);
-  // //account.center('horizontal');
-  // account.hide();
 
   // //pronouns
    she = createButton('she/her');
@@ -253,13 +257,6 @@ function setup() {
   checkbox.hide();
 
 
-/////CHARACTER
-
-  rin = loadImage("./assets_new/char/rin.png");
-  rin_worried = loadImage("./assets_new/char/rin2.png");
-  rin_talk = loadImage("./assets_new/char/rin3.png");
-  himeros = loadImage("./assets_new/char/himeros.png");
-
 ////////////////////ARCHIVE DESKTOP
   folder = createImg("./assets_new/img/folder.png");
   folder.position(windowWidth/2, windowHeight/2);
@@ -390,14 +387,14 @@ function setup() {
 
   ////////////NUDINI
 
-  for (let i = 0; i < 20; i++){
-  let x = random(width);
-  let y = random(height);
-  let r = random(300, 70);
-  let nudinorandom = random(nudini);
-  let b = new Popup(x, y, r, nudinorandom);
-  popups.push(b);
-  }
+  // for (let i = 0; i < 20; i++){
+  // let x = random(width);
+  // let y = random(height);
+  // let r = random(300, 70);
+  // let nudinorandom = random(nudini);
+  // let b = new Popup(x, y, r, nudinorandom);
+  // popups.push(b);
+  // }
 
 
 }
@@ -657,7 +654,7 @@ function draw() {
 
   }
 
-  if(go_on == 4){
+  if(go_on == 5){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -698,7 +695,7 @@ function draw() {
 
   }
 
-  if(go_on == 5){
+  if(go_on == 6){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -728,7 +725,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "Wanna learn more hot stuff about me? Check out my IG account @fabolousrin, you won’t regret it!";
+    text_box = "Wanna learn more hot stuff about me? Check out my IG account @thats_so_rin, you won’t regret it!";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -736,10 +733,20 @@ function draw() {
     text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
     pop();
 
+    //QR BOX
+    push();
+    stroke('rgba(69, 66, 168, 1)');
+    fill('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10 + 650 + 10, windowHeight - 200, 650/2, 239/2, 235/2, 235/2);
+    pop();
+
+    image(qr_rin, windowWidth/10 + 650 + 60, windowHeight - 203 + 20, 239/2 - 20, 239/2 - 20);
+
 
   }
 
-  if(go_on == 6){
+  if(go_on == 7){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -780,7 +787,7 @@ function draw() {
 
   }
 
-  if(go_on == 7){
+  if(go_on == 8){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -821,7 +828,7 @@ function draw() {
 
   }
 
-  if(go_on == 7){
+  if(go_on == 9){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -862,7 +869,7 @@ function draw() {
 
   }
 
-  if(go_on == 8){
+  if(go_on == 10){
 
     image(rin_lab, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -906,7 +913,7 @@ function draw() {
 
   ///////////////////////////////////////////////Archive
 
-  if(go_on == 9){
+  if(go_on == 11){
 
     menu.hide();
     image(archive_door, 0, 0, windowWidth, windowHeight);
@@ -948,7 +955,7 @@ function draw() {
 
   }
 
-  if(go_on == 10){
+  if(go_on == 12){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -989,7 +996,7 @@ function draw() {
 
   }
 
-  if(go_on == 11){
+  if(go_on == 13){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1030,7 +1037,7 @@ function draw() {
 
   }
 
-  if(go_on == 11){
+  if(go_on == 14){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1071,7 +1078,7 @@ function draw() {
 
   }
 
-  if(go_on == 11){
+  if(go_on == 15){
 
     // image(archive_door, 0, 0, windowWidth, windowHeight);
     // image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1114,7 +1121,7 @@ function draw() {
 
   }
 
-  if(go_on == 12){
+  if(go_on == 16){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1157,7 +1164,7 @@ function draw() {
 
 
 //////////////ENTERING THE  ARCHIVE
-  if(go_on == 13){
+  if(go_on == 17){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1198,7 +1205,7 @@ function draw() {
 
   }
 
-  if(go_on == 14){
+  if(go_on == 18){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1239,7 +1246,7 @@ function draw() {
 
   }
 
-  if(go_on == 14){
+  if(go_on == 19){
 
     menu.show();
     image(archive, 0, 0, windowWidth, windowHeight);
@@ -1298,7 +1305,7 @@ function draw() {
 
   }
 
-  if(go_on == 15){
+  if(go_on == 20){
 
     menu.hide();
     press_enter  = false;
@@ -1487,7 +1494,7 @@ function draw() {
 
   }
 
-  if(go_on == 16){
+  if(go_on == 21){
 
     menu.show();
     folder.hide();
@@ -1534,7 +1541,7 @@ function draw() {
 
   }
 
-  if(go_on == 17){
+  if(go_on == 22){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1575,7 +1582,7 @@ function draw() {
 
   }
 
-  if(go_on == 18){
+  if(go_on == 23){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1616,7 +1623,7 @@ function draw() {
 
   }
 
-  if(go_on == 19){
+  if(go_on == 24){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1657,7 +1664,7 @@ function draw() {
 
   }
 
-  if(go_on == 20){
+  if(go_on == 25){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1698,7 +1705,7 @@ function draw() {
 
   }
 
-  if(go_on == 21){
+  if(go_on == 26){
 
     menu_glow.show();
     menu.hide();
@@ -1753,7 +1760,10 @@ function draw() {
 
   }
 
+
   if(press_himeros  ==  true){
+
+    //diversity_land = false;
 
     press_enter = true;
 
@@ -1777,615 +1787,13 @@ function draw() {
 
   }
 
-  if(go_on == 22){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Himeros you will never guess what I saw!!! I fear the worst is about to come upon our galaxy.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 23){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Some imbecile wants to steal the Awkwardness totem and will make a fucking mess!";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 24){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "For all the giant cocks Rin! This is superb! WOW. We can finally do something about Awkwardness!";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 25){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Wait, what? Why is it good? Am I missing something?";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 26){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Oh oh oh Rin you have so much to learn. Awkwardness was unfairly imprisonated.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
   if(go_on == 27){
 
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "I wrote everything about it in my book: “Z69 revolution, memories of a hot bitch in state affairs”";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
+    window.open("diversity.html", "_self");
 
   }
 
-  if(go_on == 28){
 
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "It’s time for Awkwardness to get back its role in the Sexyverse, this is our chance.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 29){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Once and for all Sexyverse will be at peace.  Are you ready for the adventure?";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 30){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Okay Himeros, I’m in! But oh.. it’s my phone, an urgent message has arrived...";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 31){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
-
-    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
-
-    //TEXT BOX  HIMEROS
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(255, 125, 227, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "HIMEROS";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(255, 125, 227, 1)');
-    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Mmm...how strange! It vibrates just like my latest anal plug.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 32){
-
-    image(phone_scene, 0, 0, windowWidth, windowHeight);
-
-     push();
-     enter = "Press ENTER to go on";
-     textFont('Nunito');
-     textAlign(CENTER);
-     fill('rgba(69, 66, 168, 1)');
-     textSize(20);
-     text(enter, windowWidth/2, windowHeight * 8/9);
-     pop();
-
-  }
-
-  if(go_on == 33){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Almight fucks! We have a probem. Someone has hacked into the Sexyverse archive server...";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 34){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Nudes of Sexyverse citizens are being spread. I must fix this problem before we leave.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 35){
-
-    image(himeros_garden, 0, 0, windowWidth, windowHeight);
-    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Please " + player_name + ", help me! Point and click on the pop ups to put the nudes in a safe place.";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-    push();
-    enter = "Press ENTER to go on";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(252, 252, 167, fade);
-    textSize(20);
-    text(enter, windowWidth/10 + 50, windowHeight - 223);
-    pop();
-
-
-  }
-
-  if (go_on == 36) {
-
-    press_enter =  false;
-
-    image(sfondo_nudini, 0, 0, windowWidth, windowHeight);
-    salviamoinudini = true;
-
-    for (let i = 0; i < popups.length; i++){
-      popups[i].move();
-      popups[i].show();
-
-      //console.log("parte??");
-
-    }
-
-  }
-
-  if (counter_nudini > 20) {
-
-    background(0);
-
-    }
 
 
 }
@@ -2521,52 +1929,54 @@ function win_error(){
 
        if(travel == true && (mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
 
-         diversity_land = true;
-         console.log("diversity " + diversity_land);
-         travel_animation.play();
-         travel_animation.onended(() => {
+         //window.open("diversity.html", "_self");
 
-           press_himeros = true;
+          diversity_land = true;
+          console.log("diversity " + diversity_land);
+          travel_animation.play();
+          travel_animation.onended(() => {
 
-         });
+            press_himeros = true;
+
+          });
 
        }
 
-       if (salviamoinudini == true) {
-       for (let i = 0; i < popups.length; i++){
-         popups[i].clicked(mouseX, mouseY);
-         console.log("ti prego");
-         console.log("counter nudini" + counter_nudini);
-         }
-       }
+       // if (salviamoinudini == true) {
+       // for (let i = 0; i < popups.length; i++){
+       //   popups[i].clicked(mouseX, mouseY);
+       //   console.log("ti prego");
+       //   console.log("counter nudini" + counter_nudini);
+       //   }
+       // }
 
  }
 
- class Popup {
-   constructor(x, y, r, img) {
-     this.x = x;
-     this.y = y;
-     this.r = r;
-     this.nudinorandom = img;
-   }
-
- clicked(px, py) {
-     if (px > this.x && px < this.x + this.r && py > this.y && py < this.y + this.r && salviamoinudini == true) {
-     this.nudinorandom = nudinosalvato; //random(nudini);
-     counter_nudini = counter_nudini +1;
-
-   }
- }
-
-   move(){
-     this.x = this.x + random(-2, 2);
-     this.y = this.y + random(-2, 2);
-   }
-
-   show(){
-     image(this.nudinorandom, this.x, this.y, this.r, this.r);
-   }
- }
+ // class Popup {
+ //   constructor(x, y, r, img) {
+ //     this.x = x;
+ //     this.y = y;
+ //     this.r = r;
+ //     this.nudinorandom = img;
+ //   }
+ //
+ // clicked(px, py) {
+ //     if (px > this.x && px < this.x + this.r && py > this.y && py < this.y + this.r && salviamoinudini == true) {
+ //     this.nudinorandom = nudinosalvato; //random(nudini);
+ //     counter_nudini = counter_nudini +1;
+ //
+ //   }
+ // }
+ //
+ //   move(){
+ //     this.x = this.x + random(-2, 2);
+ //     this.y = this.y + random(-2, 2);
+ //   }
+ //
+ //   show(){
+ //     image(this.nudinorandom, this.x, this.y, this.r, this.r);
+ //   }
+ // }
 
 
 
