@@ -38,6 +38,8 @@ function preload(){
   rin_talk = loadImage("./assets_new/char/rin3.png");
   himeros = loadImage("./assets_new/char/himeros.png");
 
+  saved = loadSound('./assets_new/audio/saved.mp3');
+
 }
 
 function setup() {
@@ -54,8 +56,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo0 = true;
-    console.log("ECHECAZZO");
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -69,7 +70,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo1 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -83,7 +84,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo2 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -97,7 +98,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo3 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -111,7 +112,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo4 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -125,7 +126,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo5 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -139,7 +140,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo6 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -153,7 +154,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo7 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -167,7 +168,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo8 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -181,7 +182,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo9 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -195,7 +196,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo10 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -209,7 +210,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo11 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -223,7 +224,7 @@ function setup() {
 
     nudes_counter ++;
     non_vedo12 = true;
-    //stella_0 = true;
+    saved.play();
 
   });
 
@@ -942,6 +943,138 @@ function draw() {
 
 
   }
+
+  if(nudes_counter == 13){
+
+    press_enter = true;
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Good job, you’re a pro at this! Himeros we are now ready to go. But where do we start?";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 15){
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
+    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
+
+    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
+
+    //TEXT BOX  HIMEROS
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(255, 125, 227, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M_hi, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S_hi, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S_hi, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "HIMEROS";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(255, 125, 227, 1)');
+    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "First we have to find a person with mixed blood. I might know where to find one.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if (go_on == 16) {
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(rin, windowWidth * 5/7 , windowHeight - rin.width, rin.width/2, rin.height/2 );
+    image(himeros, windowWidth * 1/8 , windowHeight - himeros.width * 0.6, himeros.width * 0.30, himeros.height * 0.30);
+
+    var delta = ((windowWidth/2 - 650/2) - (windowWidth/10));
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(252, 252, 167, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth/2 - 650/2, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M, windowWidth/10 -  5 + delta, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S, windowWidth/10 + 615 - star_S.width/4 + delta, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S, windowWidth/10 + star_S.width/2 + delta, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    rin_name = "RIN";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(252, 252, 167, 1)');
+    text(rin_name, windowWidth/2 - 650/2 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "A mixed blood person? What fuckery is this? How come you only tell me about this stuff now?";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
 
 }
 
