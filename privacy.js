@@ -4,6 +4,17 @@ var press_enter = true;
 var nudes_counter = 0;
 var non_vedo0 =  false;
 var non_vedo1 = false;
+var non_vedo2 =  false;
+var non_vedo3 = false;
+var non_vedo4 =  false;
+var non_vedo5 = false;
+var non_vedo6 =  false;
+var non_vedo7 = false;
+var non_vedo8 =  false;
+var non_vedo9 = false;
+var non_vedo10 =  false;
+var non_vedo11 = false;
+var non_vedo12 = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -18,6 +29,7 @@ function preload(){
   star_S_hi = loadImage("./assets_new/img/star_S_hi.png");
   star_M_hi = loadImage("./assets_new/img/star_M_hi.png");
   sfondo_nudini = loadImage("./assets_new/img/sfondo_nudini.png");
+  stellona = loadImage("./assets_new/img/nudini/stellona.png");
 
   qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
 
@@ -49,7 +61,7 @@ function setup() {
 
   nudes_1 = createImg("./assets_new/img/nudini/nudino1.png");
   nudes_1.size(225, 225);
-  nudes_1.addClass('shake');
+  nudes_1.addClass('shake1');
   nudes_1.position(windowWidth * 3/4, windowHeight * 8/12);
   nudes_1.hide();
 
@@ -57,6 +69,160 @@ function setup() {
 
     nudes_counter ++;
     non_vedo1 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_2 = createImg("./assets_new/img/nudini/nudino2.png");
+  nudes_2.size(315, 315);
+  nudes_2.addClass('shake');
+  nudes_2.position(windowWidth * 2/7, windowHeight * 1/3);
+  nudes_2.hide();
+
+  nudes_2.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo2 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_3 = createImg("./assets_new/img/nudini/nudino3.png");
+  nudes_3.size(130, 130);
+  nudes_3.addClass('shake1');
+  nudes_3.position(windowWidth * 5/8, windowHeight * 1/14);
+  nudes_3.hide();
+
+  nudes_3.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo3 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_4 = createImg("./assets_new/img/nudini/nudino4.png");
+  nudes_4.size(220, 220);
+  nudes_4.addClass('shake');
+  nudes_4.position(windowWidth * 1/13, windowHeight * 3/7);
+  nudes_4.hide();
+
+  nudes_4.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo4 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_5 = createImg("./assets_new/img/nudini/nudino5.png");
+  nudes_5.size(170, 170);
+  nudes_5.addClass('shake1');
+  nudes_5.position(windowWidth * 3/4 + 10, windowHeight * 5/13);
+  nudes_5.hide();
+
+  nudes_5.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo5 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_6 = createImg("./assets_new/img/nudini/nudino6.png");
+  nudes_6.size(170, 170);
+  nudes_6.addClass('shake');
+  nudes_6.position(windowWidth/2, windowHeight * 1/8);
+  nudes_6.hide();
+
+  nudes_6.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo6 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_7 = createImg("./assets_new/img/nudini/nudino7.png");
+  nudes_7.size(300, 300);
+  nudes_7.addClass('shake1');
+  nudes_7.position(windowWidth* 5/9, windowHeight * 6/10);
+  nudes_7.hide();
+
+  nudes_7.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo7 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_8 = createImg("./assets_new/img/nudini/nudino8.png");
+  nudes_8.size(190, 190);
+  nudes_8.addClass('shake1');
+  nudes_8.position(windowWidth * 2/11, windowHeight * 7/19);
+  nudes_8.hide();
+
+  nudes_8.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo8 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_9 = createImg("./assets_new/img/nudini/nudino9.png");
+  nudes_9.size(130, 130);
+  nudes_9.addClass('shake');
+  nudes_9.position(windowWidth * 1/11, windowHeight * 4/23);
+  nudes_9.hide();
+
+  nudes_9.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo9 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_10 = createImg("./assets_new/img/nudini/nudino10.png");
+  nudes_10.size(150, 150);
+  nudes_10.addClass('shake1');
+  nudes_10.position(windowWidth * 3/18, windowHeight * 4/9);
+  nudes_10.hide();
+
+  nudes_10.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo10 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_11 = createImg("./assets_new/img/nudini/nudino11.png");
+  nudes_11.size(175, 175);
+  nudes_11.addClass('shake');
+  nudes_11.position(windowWidth * 12/23, windowHeight * 6/17);
+  nudes_11.hide();
+
+  nudes_11.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo11 = true;
+    //stella_0 = true;
+
+  });
+
+  nudes_12 = createImg("./assets_new/img/nudini/nudino12.png");
+  nudes_12.size(130, 130);
+  nudes_12.addClass('shake1');
+  nudes_12.position(windowWidth * 10/17, windowHeight/3);
+  nudes_12.hide();
+
+  nudes_12.mousePressed(() => {
+
+    nudes_counter ++;
+    non_vedo12 = true;
     //stella_0 = true;
 
   });
@@ -676,11 +842,37 @@ function draw() {
   if (go_on == 14) {
 
     press_enter =  false;
+    console.log(nudes_counter);
 
     image(sfondo_nudini, 0, 0, windowWidth, windowHeight);
 
+    image(stellona, nudes_0.x, nudes_0.y, nudes_0.width, nudes_0.height);
+    image(stellona, nudes_1.x, nudes_1.y, nudes_1.width, nudes_1.height);
+    image(stellona, nudes_2.x, nudes_2.y, nudes_2.width, nudes_2.height);
+    image(stellona, nudes_3.x, nudes_3.y, nudes_3.width, nudes_3.height);
+    image(stellona, nudes_4.x, nudes_4.y, nudes_4.width, nudes_4.height);
+    image(stellona, nudes_5.x, nudes_5.y, nudes_5.width, nudes_5.height);
+    image(stellona, nudes_6.x, nudes_6.y, nudes_6.width, nudes_6.height);
+    image(stellona, nudes_7.x, nudes_7.y, nudes_7.width, nudes_7.height);
+    image(stellona, nudes_8.x, nudes_8.y, nudes_8.width, nudes_8.height);
+    image(stellona, nudes_9.x, nudes_9.y, nudes_9.width, nudes_9.height);
+    image(stellona, nudes_10.x, nudes_10.y, nudes_10.width, nudes_10.height);
+    image(stellona, nudes_11.x, nudes_11.y, nudes_11.width, nudes_11.height);
+    image(stellona, nudes_12.x, nudes_12.y, nudes_12.width, nudes_12.height);
+
     nudes_0.show();
     nudes_1.show();
+    nudes_2.show();
+    nudes_3.show();
+    nudes_4.show();
+    nudes_5.show();
+    nudes_6.show();
+    nudes_7.show();
+    nudes_8.show();
+    nudes_9.show();
+    nudes_10.show();
+    nudes_11.show();
+    nudes_12.show();
 
     if (non_vedo0 == true){
 
@@ -692,6 +884,62 @@ function draw() {
       nudes_1.hide();
 
     }
+    if (non_vedo2 == true){
+
+      nudes_2.hide();
+
+    }
+    if (non_vedo3 == true){
+
+      nudes_3.hide();
+
+    }
+    if (non_vedo4 == true){
+
+      nudes_4.hide();
+
+    }
+    if (non_vedo5 == true){
+
+      nudes_5.hide();
+
+    }
+    if (non_vedo6 == true){
+
+      nudes_6.hide();
+
+    }
+    if (non_vedo7 == true){
+
+      nudes_7.hide();
+
+    }
+    if (non_vedo8 == true){
+
+      nudes_8.hide();
+
+    }
+    if (non_vedo9 == true){
+
+      nudes_9.hide();
+
+    }
+    if (non_vedo10 == true){
+
+      nudes_10.hide();
+
+    }
+    if (non_vedo11 == true){
+
+      nudes_11.hide();
+
+    }
+    if (non_vedo12 == true){
+
+      nudes_12.hide();
+
+    }
+
 
   }
 
