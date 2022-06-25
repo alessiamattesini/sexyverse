@@ -1,4 +1,4 @@
-var go_on = 0;
+var go_on = 18;
 var press_enter = true;
 
 var nudes_counter = 0;
@@ -37,6 +37,7 @@ function preload(){
   rin_worried = loadImage("./assets_new/char/rin2.png");
   rin_talk = loadImage("./assets_new/char/rin3.png");
   himeros = loadImage("./assets_new/char/himeros.png");
+  himeros_talk = loadImage("./assets_new/char/himeros_talk.png");
 
   saved = loadSound('./assets_new/audio/saved.mp3');
 
@@ -227,6 +228,28 @@ function setup() {
     saved.play();
 
   });
+
+
+  ////////////////name
+
+  pw = createInput();
+  pw.style("color:rgba(212, 255, 164, 1); background:rgba(212, 255, 164, 0); border-radius: 50px; border: 1px solid #D4FFA4; width: 200px; height: 30px; padding-left: 10px; font-size: 17px;text-align: center; font-family:Nunito;");
+  pw.position(windowWidth * 2/5 + 50 + 190, windowHeight - 173 + 20);
+  //pw.center('horizontal');
+  pw.hide();
+
+
+  //submit
+  submit = createButton('submit');
+  submit.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 100px; height: 32px; padding-left: 10px; font-size: 14px; font-family:Nunito;");
+  submit.position(pw.x + 200 + 30, windowHeight - 173 + 20);
+  //submit.center('horizontal');
+  submit.mousePressed(() => {
+
+    console.log(pw.value());
+
+  });
+  submit.hide();
 
 
 }
@@ -1071,6 +1094,91 @@ function draw() {
     textSize(20);
     text(text_box, windowWidth/2 - 650/2 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
     pop();
+
+
+  }
+
+  if(go_on == 17){
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(himeros_talk, windowWidth * 1/8 , windowHeight - himeros_talk.height/2, himeros_talk.width/2, himeros_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(255, 125, 227, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth * 2/5, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M_hi, windowWidth * 2/5 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S_hi, windowWidth * 2/5 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S_hi, windowWidth * 2/5 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    hi_name = "HIMEROS";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(255, 125, 227, 1)');
+    text(hi_name, windowWidth * 2/5 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Find the keyword hidden in my profile to go on in the game, when you’re done come back here.";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth * 2/5 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+
+  }
+
+  if(go_on == 18){
+
+    image(himeros_garden, 0, 0, windowWidth, windowHeight);
+    image(himeros_talk, windowWidth * 1/8 , windowHeight - himeros_talk.height/2, himeros_talk.width/2, himeros_talk.height/2 );
+
+    //TEXT BOX
+    push();
+    fill('rgba(69, 66, 168, 1)');
+    stroke('rgba(255, 125, 227, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth * 2/5, windowHeight - 200, 650, 239/2, 235/2, 235/2);
+    pop();
+
+    image(star_M_hi, windowWidth * 2/5 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
+    image(star_S_hi, windowWidth * 2/5 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
+    image(star_S_hi, windowWidth * 2/5 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
+
+    //NAME CHARACTER
+    push();
+    hi_name = "HIMEROS";
+    textFont('Nunito');
+    textStyle(BOLD);
+    textAlign(LEFT);
+    textSize(20);
+    fill('rgba(255, 125, 227, 1)');
+    text(hi_name, windowWidth * 2/5 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
+
+    //TEXT
+    push();
+    text_box = "Have you found it?";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(255);
+    textSize(20);
+    text(text_box, windowWidth * 2/5 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    pop();
+
+    pw.show();
+    submit.show();
 
 
   }
