@@ -1,5 +1,6 @@
 var go_on = 0;
 var press_enter = true;
+var player_name;
 
 var nudes_counter = 0;
 var non_vedo0 =  false;
@@ -16,6 +17,9 @@ var non_vedo10 =  false;
 var non_vedo11 = false;
 var non_vedo12 = false;
 
+var pw_ch1 = "FIKIFIKI";
+var end = false;
+
 var fade = 0;
 var fadeAmount = 1;
 
@@ -30,6 +34,7 @@ function preload(){
   star_M_hi = loadImage("./assets_new/img/star_M_hi.png");
   sfondo_nudini = loadImage("./assets_new/img/sfondo_nudini.png");
   stellona = loadImage("./assets_new/img/nudini/stellona.png");
+  ch1_end = loadImage("./assets_new/img/ch1_end.png");
 
   qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
 
@@ -52,7 +57,7 @@ function setup() {
         $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
     }
 
-    var player_name = $_GET.player_name;
+    player_name = $_GET.player_name;
     console.log(player_name);
 
   createCanvas(windowWidth, windowHeight);
@@ -245,7 +250,6 @@ function setup() {
   pw = createInput();
   pw.style("color:rgba(212, 255, 164, 1); background:rgba(212, 255, 164, 0); border-radius: 50px; border: 1px solid #D4FFA4; width: 200px; height: 30px; padding-left: 10px; font-size: 17px;text-align: center; font-family:Nunito;");
   pw.position(windowWidth * 2/5 + 50 + 190, windowHeight - 173 + 20);
-  //pw.center('horizontal');
   pw.hide();
 
 
@@ -253,8 +257,13 @@ function setup() {
   submit = createButton('submit');
   submit.style("border-radius: 50px; border: 1px solid #D4FFA4; background:rgba(212, 255, 164, 0.3); color: #D4FFA4; width: 100px; height: 32px; padding-left: 10px; font-size: 14px; font-family:Nunito;");
   submit.position(pw.x + 200 + 30, windowHeight - 173 + 20);
-  //submit.center('horizontal');
   submit.mousePressed(() => {
+
+    if(pw.value() === pw_ch1){
+
+      end = true;
+
+    }
 
     console.log(pw.value());
 
@@ -853,7 +862,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "Please, help me! Point and click on the pop ups to put the nudes in a safe place.";
+    text_box = "Please, " + player_name + " help me! Point and click on the pop ups to put the nudes in a safe place.";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -1009,7 +1018,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "Good job, you’re a pro at this! Himeros we are now ready to go. But where do we start?";
+    text_box = "Good job, " + player_name + " you’re a pro at this! Himeros we are now ready to go. But where do we start?";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -1151,6 +1160,8 @@ function draw() {
 
   if(go_on == 18){
 
+    press_enter = false;
+
     image(himeros_garden, 0, 0, windowWidth, windowHeight);
     image(himeros_talk, windowWidth * 1/8 , windowHeight - himeros_talk.height/2, himeros_talk.width/2, himeros_talk.height/2 );
 
@@ -1190,6 +1201,15 @@ function draw() {
     pw.show();
     submit.show();
 
+
+  }
+
+  if(end == true){
+
+    image(ch1_end, 0, 0, windowWidth, windowHeight);
+
+    pw.hide();
+    submit.hide();
 
   }
 
