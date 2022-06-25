@@ -289,6 +289,7 @@ function setup() {
   alert_2 = loadImage("./assets_new/img/desktop_contents/alert_2.png");
   siriobabashi = loadImage("./assets_new/img/desktop_contents/siriobabashi.png");
   elizabeth = loadImage("./assets_new/img/desktop_contents/elizabeth.png");
+  trumpino = loadImage("./assets_new/img/desktop_contents/trumpino.png");
 
   albtn_1 = createImg("./assets_new/img/desktop_contents/albtn_1.png");
   albtn_1.position(0, 0);
@@ -304,12 +305,10 @@ function setup() {
 
   next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
   next_page.position(windowWidth * 2/3 +  20, windowHeight * 7/8 - 20);
-  //next_page.size(1920 * 0.75, 1080 * 0.75);
   next_page.mousePressed(page);
   next_page.hide();
 
   chiudi = createImg("./assets_new/img/desktop_contents/chiudi_libro.png");
-  //chiudi.size(chiudi.width * 0.75, chiudi.height * 0.75);
   chiudi.position(windowWidth * 3/4 , windowHeight/25);
   chiudi.mousePressed(chiudifile);
   chiudi.hide();
@@ -319,13 +318,13 @@ function setup() {
   next_nude.center('vertical');
   next_nude.mousePressed(() => {
 
-    if(nudino < 1){
+    if(nudino < 2){
 
       nudino++;
 
     } else {
 
-      nudino--;
+      nudino = 0;
 
     }
 
@@ -344,7 +343,7 @@ function setup() {
 
     } else {
 
-        nudino++;
+        nudino = 2;
 
     }
 
@@ -1459,6 +1458,21 @@ function draw() {
         push();
         imageMode(CENTER);
         image(elizabeth, windowWidth/2, windowHeight/2);
+        pop();
+
+
+      }
+
+      if(nudino == 2){
+
+        push();
+        fill('rgba(0, 0, 0, 0.5)');
+        rect(0,  0, windowWidth, windowHeight);
+        pop();
+
+        push();
+        imageMode(CENTER);
+        image(trumpino, windowWidth/2, windowHeight/2);
         pop();
 
 
