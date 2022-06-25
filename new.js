@@ -1789,7 +1789,7 @@ function draw() {
 
   if(go_on == 27){
 
-    window.open("diversity.html", "_self");
+    window.open("diversity.html?player_name=" + encodeURIComponent(player_name), "_self");
 
   }
 

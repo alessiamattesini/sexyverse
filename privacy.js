@@ -1,4 +1,4 @@
-var go_on = 18;
+var go_on = 0;
 var press_enter = true;
 
 var nudes_counter = 0;
@@ -44,6 +44,16 @@ function preload(){
 }
 
 function setup() {
+
+      var parts = window.location.search.substr(1).split("&");
+    var $_GET = {};
+    for (var i = 0; i < parts.length; i++) {
+        var temp = parts[i].split("=");
+        $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+    }
+
+    var player_name = $_GET.player_name;
+    console.log(player_name);
 
   createCanvas(windowWidth, windowHeight);
 
