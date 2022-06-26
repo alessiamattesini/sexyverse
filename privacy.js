@@ -19,6 +19,7 @@ var non_vedo12 = false;
 
 var pw_ch1 = "FIKIFIKI";
 var end = false;
+var wrong = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -263,12 +264,21 @@ function setup() {
 
       end = true;
 
+    } else {
+
+      wrong = true;
+
     }
 
     console.log(pw.value());
 
   });
   submit.hide();
+
+  wrong_pw = createImg("./assets_new/img/wrong_pw.png");
+  wrong_pw.size(757 * 2/3, 328 * 2/3);
+  wrong_pw.position(windowWidth * 2/5 + 50, windowHeight/3);
+  wrong_pw.hide();
 
 
 }
@@ -1201,6 +1211,12 @@ function draw() {
     pw.show();
     submit.show();
 
+    if(wrong == true){
+
+      wrong_pw.show();
+
+    }
+
 
   }
 
@@ -1210,6 +1226,7 @@ function draw() {
 
     pw.hide();
     submit.hide();
+    wrong_pw.hide();
 
   }
 
