@@ -539,16 +539,14 @@ function draw() {
      }
      fade += fadeAmount;
 
-    push();
-    enter = "Press ENTER to go on";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(252, 252, 167, fade);
-    textSize(20);
-    text(enter, windowWidth/10 + 50, windowHeight - 223);
-    pop();
-
-    //noLoop();
+     push();
+     enter = "- Press ENTER to go on";
+     textFont('Nunito');
+     textAlign(LEFT);
+     fill(252, 252, 167, fade);
+     textSize(20);
+     text(enter, windowWidth/10 + 90, windowHeight - 203 + 20, 600, 239/2 - 50);
+     pop();
 
   }
 
@@ -1268,14 +1266,14 @@ function draw() {
     }
     fade += fadeAmount;
 
-   push();
-   enter = "Press ENTER to get to the Iplug Pro";
-   textFont('Nunito');
-   textAlign(LEFT);
-   fill(252, 252, 167, fade);
-   textSize(20);
-   text(enter, windowWidth/10 + 50, windowHeight - 223);
-   pop();
+    push();
+    enter = "- Press ENTER to get to the Iplug Pro";
+    textFont('Nunito');
+    textAlign(LEFT);
+    fill(252, 252, 167, fade);
+    textSize(20);
+    text(enter, windowWidth/10 + 90,  windowHeight - 203 + 20, 600, 239/2 - 50);
+    pop();
 
 
   }

@@ -785,7 +785,7 @@ function draw() {
      enter = "Press ENTER to go on";
      textFont('Nunito');
      textAlign(CENTER);
-     fill(69, 66, 168, fade);
+     fill(69, 66, 168);
      textSize(20);
      text(enter, windowWidth/2, windowHeight * 8/9);
      pop();
@@ -924,12 +924,12 @@ function draw() {
     pop();
 
     push();
-    enter = "Press ENTER to go on";
+    enter = "- Press ENTER to go on";
     textFont('Nunito');
     textAlign(LEFT);
-    fill(252, 252, 167, fade);
+    fill(252, 252, 167);
     textSize(20);
-    text(enter, windowWidth/10 + 50, windowHeight - 223);
+    text(enter, windowWidth/10 + 90, windowHeight - 203 + 20, 600, 239/2 - 50);
     pop();
 
 
