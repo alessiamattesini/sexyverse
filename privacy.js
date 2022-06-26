@@ -37,7 +37,7 @@ function preload(){
   stellona = loadImage("./assets_new/img/nudini/stellona.png");
   ch1_end = loadImage("./assets_new/img/ch1_end.png");
 
-  qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
+  qr_himeros = loadImage("./assets_new/img/QR/HIMEROS-IG.png");
 
   rin = loadImage("./assets_new/char/rin.png");
   rin_worried = loadImage("./assets_new/char/rin2.png");
@@ -53,6 +53,11 @@ function preload(){
 
 function setup() {
 
+
+    ambient2.setVolume(0.5);
+    ambient2.loop();
+
+
       var parts = window.location.search.substr(1).split("&");
     var $_GET = {};
     for (var i = 0; i < parts.length; i++) {
@@ -62,6 +67,7 @@ function setup() {
 
     player_name = $_GET.player_name;
     console.log(player_name);
+
 
   createCanvas(windowWidth, windowHeight);
 
@@ -281,10 +287,6 @@ function setup() {
   wrong_pw.size(757 * 2/3, 328 * 2/3);
   wrong_pw.position(windowWidth * 2/5 + 50, windowHeight/3);
   wrong_pw.hide();
-
-
-  ambient2.setVolume(0.5);
-  ambient2.loop();
 
 
 
@@ -1171,6 +1173,15 @@ function draw() {
     textSize(20);
     text(text_box, windowWidth * 2/5 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
     pop();
+
+    push();
+    stroke('rgba(69, 66, 168, 1)');
+    fill('rgba(255, 125, 227, 1)');
+    strokeWeight(1.5);
+    rect(windowWidth * 2/5 - 200 - 10, windowHeight - 200, 200, 239/2, 235/2, 235/2);
+    pop();
+
+    image(qr_himeros, windowWidth * 2/5 - 200 + 40, windowHeight - 203 + 12, 239/2 - 20, 239/2 - 20);
 
 
   }

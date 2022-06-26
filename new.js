@@ -1061,50 +1061,7 @@ function draw() {
 
 
 
-  ///////////////////////QUI C'è UN ERRORE RCA TROIA
-
   if(go_on == 14){
-
-    image(archive_door, 0, 0, windowWidth, windowHeight);
-    image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-
-    //TEXT BOX
-    push();
-    fill('rgba(69, 66, 168, 1)');
-    stroke('rgba(252, 252, 167, 1)');
-    strokeWeight(1.5);
-    rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    pop();
-
-    image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
-    image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-
-    //NAME CHARACTER
-    push();
-    rin_name = "RIN";
-    textFont('Nunito');
-    textStyle(BOLD);
-    textAlign(LEFT);
-    textSize(20);
-    fill('rgba(252, 252, 167, 1)');
-    text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    pop();
-
-    //TEXT
-    push();
-    text_box = "Please, fill out this form on the door and read the archive rules. ";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
-    pop();
-
-
-  }
-
-  if(go_on == 15){
 
     // image(archive_door, 0, 0, windowWidth, windowHeight);
     // image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1147,7 +1104,7 @@ function draw() {
 
   }
 
-  if(go_on == 16){
+  if(go_on == 15){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1190,7 +1147,7 @@ function draw() {
 
 
 //////////////ENTERING THE  ARCHIVE
-  if(go_on == 17){
+  if(go_on == 16){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1231,7 +1188,7 @@ function draw() {
 
   }
 
-  if(go_on == 18){
+  if(go_on == 17){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -1272,7 +1229,7 @@ function draw() {
 
   }
 
-  if(go_on == 19){
+  if(go_on == 18){
 
     menu.show();
     image(archive, 0, 0, windowWidth, windowHeight);
@@ -1331,7 +1288,7 @@ function draw() {
 
   }
 
-  if(go_on == 20){
+  if(go_on == 19){
 
     menu.hide();
     press_enter  = false;
@@ -1707,7 +1664,7 @@ function draw() {
 
   }
 
-  if(go_on == 21){
+  if(go_on == 20){
 
     menu.show();
     folder.hide();
@@ -1757,7 +1714,7 @@ function draw() {
 
   }
 
-  if(go_on == 22){
+  if(go_on == 21){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1798,7 +1755,7 @@ function draw() {
 
   }
 
-  if(go_on == 23){
+  if(go_on == 22){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1839,7 +1796,7 @@ function draw() {
 
   }
 
-  if(go_on == 24){
+  if(go_on == 23){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1880,7 +1837,7 @@ function draw() {
 
   }
 
-  if(go_on == 25){
+  if(go_on == 24){
 
     image(archive, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -1921,7 +1878,7 @@ function draw() {
 
   }
 
-  if(go_on == 26){
+  if(go_on == 25){
 
     menu_glow.show();
     menu.hide();
@@ -2003,7 +1960,7 @@ function draw() {
 
   }
 
-  if(go_on == 27){
+  if(go_on == 26){
 
     window.open("diversity.html?player_name=" + encodeURIComponent(player_name), "_self");
 
