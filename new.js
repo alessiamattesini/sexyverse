@@ -2150,8 +2150,6 @@ function win_error(){
      line(pmouseX, pmouseY, mouseX, mouseY);
      pop();
      firma =  true;
-     //console.log("che due coglioni");
-
 
    }
  }
