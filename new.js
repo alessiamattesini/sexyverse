@@ -414,6 +414,9 @@ function setup() {
   suono = loadSound('./assets_new/audio/Windows_error.mp3');
   suono.stop();
 
+  ambient = loadSound('./assets_new/audio/central_sound.mp3');
+  ambient.stop();
+
 
 
 }
@@ -1964,7 +1967,7 @@ function draw() {
 
   if(diversity_land ==  true){
 
-    //travel = false;
+    ambient.stop();
     icona_mappa.hide();
     menu_glow.hide();
     menu.hide();
@@ -2051,6 +2054,13 @@ function keyPressed(){
     if(press_enter == true){
 
       go_on++;
+
+    }
+
+    if(go_on == 1){
+
+      ambient.play();
+      ambient.loop();
 
     }
   }
