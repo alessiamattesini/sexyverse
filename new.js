@@ -27,7 +27,8 @@ var rev_1 = false;
 var rev_2 = false;
 var trash_bin = false;
 var legend =  false;
-var cut =  false;
+var cut = false;
+var revenge = false;
 
 //////viaggio
 var travel = false;
@@ -292,6 +293,16 @@ function setup() {
   folder4.size(179 * 0.6, 156 * 0.6);
   folder4.hide();
 
+  folder5 = createImg("./assets_new/img/folder.png");
+  folder5.position(windowWidth * 13/17, windowHeight * 5/17);
+  folder5.doubleClicked(() => {
+
+    revenge = true;
+
+  });
+  folder5.size(179 * 0.6, 156 * 0.6);
+  folder5.hide();
+
   condom_bin = createImg("./assets_new/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
@@ -319,6 +330,7 @@ function setup() {
   trash = loadImage("./assets_new/img/desktop_contents/trash.png");
   glegend = loadImage("./assets_new/img/desktop_contents/Glegend.png");
   powercut = loadImage("./assets_new/img/desktop_contents/powercut.png");
+  revenge_porn = loadImage("./assets_new/img/desktop_contents/revenge_porn.png");
 
 
   next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
@@ -1336,6 +1348,7 @@ function draw() {
     folder2.show();
     folder3.show();
     folder4.show();
+    folder5.show();
 
     push();
     label_1 =  "condom bin";
@@ -1392,12 +1405,22 @@ function draw() {
     text(label_6, windowWidth * 4/11, windowHeight * 4/11 + 80, 179 * 0.6, 156 * 0.6);
     pop();
 
+    push();
+    label_7 =  "revenge_porn";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_7, windowWidth * 13/17, windowHeight * 5/17 + 80, 179 * 0.6, 156 * 0.6);
+    pop();
+
     if(totem_pdf == true){
 
       folder.hide();
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1416,6 +1439,7 @@ function draw() {
       folder.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1435,6 +1459,7 @@ function draw() {
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1461,6 +1486,7 @@ function draw() {
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1489,6 +1515,7 @@ function draw() {
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1514,6 +1541,7 @@ function draw() {
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1533,12 +1561,39 @@ function draw() {
 
     }
 
+    if(revenge == true){
+
+      folder.hide();
+      folder2.hide();
+      folder3.hide();
+      folder4.hide();
+      folder5.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
+
+      push();
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
+      pop();
+
+      push();
+      imageMode(CENTER);
+      image(revenge_porn, windowWidth/2, windowHeight/2);
+      pop();
+
+      chiudi.show();
+
+    }
+
     if(vip_nudes == true){
 
       folder2.hide();
       folder.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
       chiudi.show();
@@ -1615,6 +1670,7 @@ function draw() {
       folder2.hide();
       folder3.hide();
       folder4.hide();
+      folder5.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1654,6 +1710,7 @@ function draw() {
     folder.hide();
     folder3.hide();
     folder4.hide();
+    folder5.hide();
     condom_bin.hide();
     hazard.hide();
     folder2.hide();
@@ -2059,7 +2116,8 @@ function chiudifile(){
   vip_nudes = false;
   trash_bin = false;
   legend  = false;
-  cut  = false;
+  cut = false;
+  revenge = false;
   chiudi.hide();
   rev_2 = false;
   prev_nude.hide();
