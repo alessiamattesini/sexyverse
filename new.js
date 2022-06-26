@@ -27,6 +27,7 @@ var rev_1 = false;
 var rev_2 = false;
 var trash_bin = false;
 var legend =  false;
+var cut =  false;
 
 //////viaggio
 var travel = false;
@@ -281,6 +282,16 @@ function setup() {
   folder3.size(179 * 0.6, 156 * 0.6);
   folder3.hide();
 
+  folder4 = createImg("./assets_new/img/folder.png");
+  folder4.position(windowWidth * 4/11, windowHeight * 4/11);
+  folder4.doubleClicked(() => {
+
+    cut = true;
+
+  });
+  folder4.size(179 * 0.6, 156 * 0.6);
+  folder4.hide();
+
   condom_bin = createImg("./assets_new/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
@@ -307,6 +318,7 @@ function setup() {
   trumpino = loadImage("./assets_new/img/desktop_contents/trumpino.png");
   trash = loadImage("./assets_new/img/desktop_contents/trash.png");
   glegend = loadImage("./assets_new/img/desktop_contents/Glegend.png");
+  powercut = loadImage("./assets_new/img/desktop_contents/powercut.png");
 
 
   next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
@@ -1323,6 +1335,7 @@ function draw() {
     hazard.show();
     folder2.show();
     folder3.show();
+    folder4.show();
 
     push();
     label_1 =  "condom bin";
@@ -1369,11 +1382,22 @@ function draw() {
     text(label_5, windowWidth * 4/7, windowHeight * 1/8 + 80, 179 * 0.6, 156 * 0.6);
     pop();
 
+
+    push();
+    label_6 =  "powercut.pdf";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_6, windowWidth * 4/11, windowHeight * 4/11 + 80, 179 * 0.6, 156 * 0.6);
+    pop();
+
     if(totem_pdf == true){
 
       folder.hide();
       folder2.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1391,6 +1415,7 @@ function draw() {
       totem_pdf = false;
       folder.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1409,6 +1434,7 @@ function draw() {
       folder.hide();
       folder2.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1434,6 +1460,7 @@ function draw() {
       folder.hide();
       folder2.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1461,6 +1488,7 @@ function draw() {
       folder.hide();
       folder2.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1480,11 +1508,37 @@ function draw() {
 
     }
 
+    if(cut == true){
+
+      folder.hide();
+      folder2.hide();
+      folder3.hide();
+      folder4.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
+
+      push();
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
+      pop();
+
+      push();
+      imageMode(CENTER);
+      image(powercut, windowWidth/2, windowHeight/2);
+      pop();
+
+      chiudi.show();
+
+    }
+
     if(vip_nudes == true){
 
       folder2.hide();
       folder.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
       chiudi.show();
@@ -1560,6 +1614,7 @@ function draw() {
       folder.hide();
       folder2.hide();
       folder3.hide();
+      folder4.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1598,6 +1653,7 @@ function draw() {
     menu.show();
     folder.hide();
     folder3.hide();
+    folder4.hide();
     condom_bin.hide();
     hazard.hide();
     folder2.hide();
@@ -2003,6 +2059,7 @@ function chiudifile(){
   vip_nudes = false;
   trash_bin = false;
   legend  = false;
+  cut  = false;
   chiudi.hide();
   rev_2 = false;
   prev_nude.hide();
