@@ -53,10 +53,7 @@ function preload(){
 
 function setup() {
 
-
-    ambient2.setVolume(0.5);
-    ambient2.loop();
-
+  backgroundmusic();
 
       var parts = window.location.search.substr(1).split("&");
     var $_GET = {};
@@ -287,6 +284,35 @@ function setup() {
   wrong_pw.size(757 * 2/3, 328 * 2/3);
   wrong_pw.position(windowWidth * 2/5 + 50, windowHeight/3);
   wrong_pw.hide();
+
+  about = createP("about");
+  about.position(windowWidth - 100, 5);
+  about.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito;");
+  about.mouseOver(about_over);
+  about.mouseOut(about_out);
+  about.mousePressed(about_page);
+  about.hide();
+
+  play_again = createP("play again");
+  play_again.position(30, 5);
+  play_again.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito;");
+  play_again.mouseOver(() => {
+
+    play_again.style("text-decoration: underline;");
+
+  });
+  play_again.mouseOut(() => {
+
+    play_again.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito; text-decoration: none;");
+
+
+  });
+  play_again.mousePressed(() => {
+
+      window.open("index.html", "_self");
+
+  });
+  play_again.hide();
 
 
 
@@ -1245,6 +1271,8 @@ function draw() {
     pw.hide();
     submit.hide();
     wrong_pw.hide();
+    about.show();
+    play_again.show();
 
   }
 
@@ -1262,6 +1290,31 @@ function keyPressed(){
 
     }
   }
+}
+
+function backgroundmusic(){
+
+  ambient2.setVolume(0.5);
+  ambient2.loop();
+
+}
+
+function about_page(){
+
+  window.open("about.html", "_blank");
+
+}
+
+function about_over(){
+
+  about.style("text-decoration: underline;");
+
+}
+
+function about_out(){
+
+  about.style("color:rgba(212, 255, 164, 1); font-size:25px; font-family:Nunito; text-decoration: none;");
+
 }
 
 function windowResized() {
