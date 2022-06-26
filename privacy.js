@@ -315,6 +315,10 @@ function setup() {
   play_again.hide();
 
 
+  menu = createImg("./assets_new/img/menu.png");
+  menu.position(windowWidth - 40 - 93*0.75, 40);
+  menu.size(93 * 0.75, 93 * 0.75);
+  menu.show();
 
 }
 
@@ -765,6 +769,8 @@ function draw() {
 
   if(go_on == 10){
 
+      menu.hide();
+
       image(phone_scene, 0, 0, windowWidth, windowHeight);
 
       if (fade < 10 ){
@@ -796,6 +802,8 @@ function draw() {
   }
 
   if(go_on == 11){
+
+    menu.show();
 
     image(himeros_garden, 0, 0, windowWidth, windowHeight);
     image(rin_talk, windowWidth * 3/5 , windowHeight - rin_talk.width/2, rin_talk.width/2, rin_talk.height/2 );
@@ -932,6 +940,8 @@ function draw() {
     press_enter =  false;
     console.log(nudes_counter);
 
+    menu.hide();
+
     image(sfondo_nudini, 0, 0, windowWidth, windowHeight);
 
     image(stellona, nudes_0.x, nudes_0.y, nudes_0.width, nudes_0.height);
@@ -1032,6 +1042,8 @@ function draw() {
   }
 
   if(nudes_counter == 13){
+
+    menu.show();
 
     press_enter = true;
 
