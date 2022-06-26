@@ -20,6 +20,7 @@ var non_vedo12 = false;
 var pw_ch1 = "FIKIFIKI";
 var end = false;
 var wrong = false;
+var suono = false;
 
 var fade = 0;
 var fadeAmount = 1;
@@ -53,7 +54,7 @@ function preload(){
 
 function setup() {
 
-  backgroundmusic();
+  //setTimeout(entro, 200);
 
       var parts = window.location.search.substr(1).split("&");
     var $_GET = {};
@@ -323,7 +324,15 @@ function setup() {
 }
 
 function draw() {
-  // put drawing code here
+
+  // if(suono == false){
+  //
+  //
+  //   entro();
+  //   suono = true;
+  //
+  // }
+
 
   if(go_on == 0){
 
@@ -1302,15 +1311,30 @@ function keyPressed(){
       go_on++;
 
     }
+
+    if(go_on == 1){
+
+      ambient2.setVolume(0.65);
+      ambient2.loop();
+
+    }
   }
 }
 
-function backgroundmusic(){
+// function backgroundmusic(){
+//
+//   ambient2.setVolume(0.5);
+//   ambient2.loop();
+//
+// }
 
-  ambient2.setVolume(0.5);
-  ambient2.loop();
-
-}
+// function entro(){
+//
+//   console.log("ehi sono entrato");
+//   ambient2.play();
+//
+//
+// }
 
 function about_page(){
 
