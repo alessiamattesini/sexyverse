@@ -4,6 +4,8 @@ var player_name;
 var go_on = 0;
 var text_box = "";
 var start = false;
+var sign = false;
+var firma = false;
 
 var iniziamo = false;
 var press_enter = false;
@@ -63,6 +65,7 @@ function preload() {
   star_M = loadImage("./assets_new/img/star_M.png");
   star_S_hi = loadImage("./assets_new/img/star_S_hi.png");
   star_M_hi = loadImage("./assets_new/img/star_M_hi.png");
+  privacy = loadImage("./assets_new/img/privacy.png");
 
   qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
 
@@ -250,13 +253,9 @@ function setup() {
 ///////////checkbox
 
   checkbox = createCheckbox('I accept the sexy rulez <3', false);
-  checkbox.position((width/2) - checkbox.width/9, height * 8 / 12 - 60);
-  //checkbox.changed(myCheckedEvent);
-  checkbox.style('color: rgba(53, 28, 117, 1); font-size: 25px ; font-family: Nunito; text-align : right');
+  checkbox.position(windowWidth/4 - 5, height * 8/11);
+  checkbox.style('color: rgba(53, 28, 117, 1); font-size: 20px ; font-family: Nunito; text-align : right');
   checkbox.class('checky');
-  // checkbox.style('font-size', '25px');
-  // checkbox.style('font-family', 'Nunito');
-  // checkbox.style('text-align', 'right');
   checkbox.hide();
 
 
@@ -1061,50 +1060,43 @@ function draw() {
 
 
 
-  if(go_on == 14){
+  if(go_on == 14  && sign == false){
 
-    // image(archive_door, 0, 0, windowWidth, windowHeight);
-    // image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
-    //
-    // //TEXT BOX
-    // push();
-    // fill('rgba(69, 66, 168, 1)');
-    // stroke('rgba(252, 252, 167, 1)');
-    // strokeWeight(1.5);
-    // rect(windowWidth/10, windowHeight - 200, 650, 239/2, 235/2, 235/2);
-    // pop();
-    //
-    // image(star_M, windowWidth/10 -  5, windowHeight - 215, star_M.width/2, star_M.height/2);
-    // image(star_S, windowWidth/10 + 615 - star_S.width/4, windowHeight - 235 + star_S.height/4 + 239/2 , star_S.width/2, star_S.height/2);
-    // image(star_S, windowWidth/10 + star_S.width/2, windowHeight - 200 -  star_S.height/4, star_S.width/2, star_S.height/2);
-    //
-    // //NAME CHARACTER
-    // push();
-    // rin_name = "RIN";
-    // textFont('Nunito');
-    // textStyle(BOLD);
-    // textAlign(LEFT);
-    // textSize(20);
-    // fill('rgba(252, 252, 167, 1)');
-    // text(rin_name, windowWidth/10 + 50, windowHeight - 203 + 20, 600, 239/2 - 50);
-    // pop();
+    press_enter = false;
+    sign = true;
 
-    background(0);
 
-    //TEXT
+
+    image(archive_door, 0, 0, windowWidth, windowHeight);
+
     push();
-    text_box = "Questo è un segna posto in attesa di capire come saranno le rulez";
-    textFont('Nunito');
-    textAlign(LEFT);
-    fill(255);
-    textSize(20);
-    text(text_box, windowWidth/10 + 50, windowHeight - 173 + 20, 550, 239/2 - 50);
+    fill('rgba(0, 0, 0, 0.5)');
+    rect(0,  0, windowWidth, windowHeight);
     pop();
 
+    push();
+    //scale(0.60);
+    imageMode(CENTER);
+    image(privacy, windowWidth/2, windowHeight/2, privacy.width * 2/3, privacy.height * 2/3);
+    pop();
+
+  }
+
+  if(go_on == 14){
+
+    checkbox.show();
+
+    if(firma == true && checkbox.checked()){
+
+      press_enter  = true;
+
+    }
 
   }
 
   if(go_on == 15){
+
+    checkbox.hide();
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
     image(rin, windowWidth * 3/5 , windowHeight - rin.width, rin.width/2, rin.height/2 );
@@ -2149,31 +2141,22 @@ function win_error(){
 
  }
 
- // class Popup {
- //   constructor(x, y, r, img) {
- //     this.x = x;
- //     this.y = y;
- //     this.r = r;
- //     this.nudinorandom = img;
- //   }
- //
- // clicked(px, py) {
- //     if (px > this.x && px < this.x + this.r && py > this.y && py < this.y + this.r && salviamoinudini == true) {
- //     this.nudinorandom = nudinosalvato; //random(nudini);
- //     counter_nudini = counter_nudini +1;
- //
- //   }
- // }
- //
- //   move(){
- //     this.x = this.x + random(-2, 2);
- //     this.y = this.y + random(-2, 2);
- //   }
- //
- //   show(){
- //     image(this.nudinorandom, this.x, this.y, this.r, this.r);
- //   }
- // }
+ function mouseDragged() {
+
+
+   if(go_on == 14){
+
+     push();
+     strokeWeight(3);
+     stroke('black');
+     line(pmouseX, pmouseY, mouseX, mouseY);
+     pop();
+     firma =  true;
+     //console.log("che due coglioni");
+
+
+   }
+ }
 
 
 
