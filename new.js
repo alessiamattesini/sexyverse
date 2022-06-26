@@ -1629,7 +1629,7 @@ function draw() {
 
     }
 
-    if(info_totem == true && info_revolution == true){
+    if(info_totem == true && info_revolution == true && totem_pdf == false && vip_nudes == false && trash_bin == false && legend == false && cut == false && revenge == false && rev_2 == false){
 
       press_enter = true;
 
@@ -1648,7 +1648,7 @@ function draw() {
      textAlign(CENTER);
      fill(212, 255, 164, fade);
      textSize(20);
-     text(enter, windowWidth/2 , windowHeight/6);
+     text(enter, windowWidth/2 , windowHeight/8);
      pop();
 
 
