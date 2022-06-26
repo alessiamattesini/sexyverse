@@ -25,6 +25,8 @@ var vip_nudes = false;
 var nudino = 0;
 var rev_1 = false;
 var rev_2 = false;
+var trash_bin = false;
+var legend =  false;
 
 //////viaggio
 var travel = false;
@@ -59,7 +61,6 @@ function preload() {
   star_M = loadImage("./assets_new/img/star_M.png");
   star_S_hi = loadImage("./assets_new/img/star_S_hi.png");
   star_M_hi = loadImage("./assets_new/img/star_M_hi.png");
-  sfondo_nudini = loadImage("./assets_new/img/sfondo_nudini.png");
 
   qr_rin = loadImage("./assets_new/img/QR/RIN-IG.png");
 
@@ -270,6 +271,16 @@ function setup() {
   folder2.size(179 * 0.6, 156 * 0.6);
   folder2.hide();
 
+  folder3 = createImg("./assets_new/img/folder.png");
+  folder3.position(windowWidth * 4/7, windowHeight * 1/8);
+  folder3.doubleClicked(() => {
+
+    legend = true;
+
+  });
+  folder3.size(179 * 0.6, 156 * 0.6);
+  folder3.hide();
+
   condom_bin = createImg("./assets_new/img/condom_bin.png");
   condom_bin.position(windowWidth * 4/5 - 45, windowHeight * 9/13);
   condom_bin.size(158 * 0.6, 179 * 0.6);
@@ -279,29 +290,24 @@ function setup() {
   hazard = createImg("./assets_new/img/hazard.png");
   hazard.position(windowWidth * 2/9, windowHeight/4);
   hazard.size(165 * 0.6, 163 * 0.6);
-  hazard.doubleClicked(revolution);
+  hazard.doubleClicked(() => {
+
+    rev_1= true;
+
+  });
   hazard.hide();
 
 
   page_1 = loadImage("./assets_new/img/desktop_contents/page_1.png");
   page_2 = loadImage("./assets_new/img/desktop_contents/page_2.png");
-  alert_1 = loadImage("./assets_new/img/desktop_contents/alert.png");
-  alert_2 = loadImage("./assets_new/img/desktop_contents/alert_2.png");
+  revolution1 = loadImage("./assets_new/img/desktop_contents/revolution1.png");
+  revolution2 = loadImage("./assets_new/img/desktop_contents/revolution2.png");
   siriobabashi = loadImage("./assets_new/img/desktop_contents/siriobabashi.png");
   elizabeth = loadImage("./assets_new/img/desktop_contents/elizabeth.png");
   trumpino = loadImage("./assets_new/img/desktop_contents/trumpino.png");
+  trash = loadImage("./assets_new/img/desktop_contents/trash.png");
+  glegend = loadImage("./assets_new/img/desktop_contents/Glegend.png");
 
-  albtn_1 = createImg("./assets_new/img/desktop_contents/albtn_1.png");
-  albtn_1.position(0, 0);
-  albtn_1.size(1920 * 0.75, 1080 * 0.75);
-  albtn_1.mousePressed(next_rev);
-  albtn_1.hide();
-
-  albtn_2 = createImg("./assets_new/img/desktop_contents/albtn_2.png");
-  albtn_2.position(0, 0);
-  albtn_2.size(1920 * 0.75, 1080 * 0.75);
-  albtn_2.mousePressed(next_rev2);
-  albtn_2.hide();
 
   next_page = createImg("./assets_new/img/desktop_contents/arrow_libro.png");
   next_page.position(windowWidth * 2/3 +  20, windowHeight * 7/8 - 20);
@@ -384,16 +390,6 @@ function setup() {
   suono = loadSound('./assets_new/audio/Windows_error.mp3');
   suono.stop();
 
-  ////////////NUDINI
-
-  // for (let i = 0; i < 20; i++){
-  // let x = random(width);
-  // let y = random(height);
-  // let r = random(300, 70);
-  // let nudinorandom = random(nudini);
-  // let b = new Popup(x, y, r, nudinorandom);
-  // popups.push(b);
-  // }
 
 
 }
@@ -737,10 +733,10 @@ function draw() {
     stroke('rgba(69, 66, 168, 1)');
     fill('rgba(252, 252, 167, 1)');
     strokeWeight(1.5);
-    rect(windowWidth/10 + 650 + 10, windowHeight - 200, 650/2, 239/2, 235/2, 235/2);
+    rect(windowWidth/10 + 650 + 10, windowHeight - 200, 200, 239/2, 235/2, 235/2);
     pop();
 
-    image(qr_rin, windowWidth/10 + 650 + 60, windowHeight - 203 + 20, 239/2 - 20, 239/2 - 20);
+    image(qr_rin, windowWidth/10 + 650 + 60, windowHeight - 203 + 12, 239/2 - 20, 239/2 - 20);
 
 
   }
@@ -1036,6 +1032,10 @@ function draw() {
 
   }
 
+
+
+  ///////////////////////QUI C'è UN ERRORE RCA TROIA
+
   if(go_on == 14){
 
     image(archive_door, 0, 0, windowWidth, windowHeight);
@@ -1322,6 +1322,7 @@ function draw() {
     folder.show();
     hazard.show();
     folder2.show();
+    folder3.show();
 
     push();
     label_1 =  "condom bin";
@@ -1359,10 +1360,20 @@ function draw() {
     text(label_4, windowWidth/3, windowHeight * 3/4 + 80, 179 * 0.6, 156 * 0.6);
     pop();
 
+    push();
+    label_5 =  "G-Spot Legend";
+    textFont('Nunito');
+    textAlign(CENTER);
+    textSize(16);
+    fill('white');
+    text(label_5, windowWidth * 4/7, windowHeight * 1/8 + 80, 179 * 0.6, 156 * 0.6);
+    pop();
+
     if(totem_pdf == true){
 
       folder.hide();
       folder2.hide();
+      folder3.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1379,6 +1390,7 @@ function draw() {
 
       totem_pdf = false;
       folder.hide();
+      folder3.hide();
       condom_bin.hide();
       hazard.hide();
 
@@ -1386,37 +1398,85 @@ function draw() {
       chiudi.show();
 
       push();
-      //scale(0.75);
       image(page_2, windowWidth/2 - page_2.width/2, windowHeight/2 - page_2.height/2);
       pop();
+      info_totem =  true;
 
     }
 
     if(rev_1 == true){
 
       folder.hide();
+      folder2.hide();
+      folder3.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
 
       push();
-      scale(0.75);
-      image(alert_1, 0, 0);
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
       pop();
 
-      albtn_1.show();
+      push();
+      imageMode(CENTER);
+      image(revolution1, windowWidth/2, windowHeight/2);
+      pop();
+
+      next_page.show();
+
 
     }
 
     if(rev_2 == true){
 
       folder.hide();
+      folder2.hide();
+      folder3.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
 
       push();
-      scale(0.75);
-      image(alert_1, 0, 0);
-      image(alert_2, 0, 0);
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
       pop();
 
-      albtn_1.show();
-      albtn_2.show();
+      push();
+      imageMode(CENTER);
+      image(revolution2, windowWidth/2, windowHeight/2);
+      pop();
+
+      chiudi.show();
+      next_page.hide();
+
+      info_revolution = true;
+
+    }
+
+    if(legend == true){
+
+      folder.hide();
+      folder2.hide();
+      folder3.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+      image(archive, 0, 0, windowWidth, windowHeight);
+
+      push();
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
+      pop();
+
+      push();
+      imageMode(CENTER);
+      image(glegend, windowWidth/2, windowHeight/2);
+      pop();
+
+      chiudi.show();
 
     }
 
@@ -1424,6 +1484,7 @@ function draw() {
 
       folder2.hide();
       folder.hide();
+      folder3.hide();
       condom_bin.hide();
       hazard.hide();
       chiudi.show();
@@ -1481,6 +1542,30 @@ function draw() {
 
     }
 
+    if(trash_bin == true){
+
+      image(archive, 0, 0, windowWidth, windowHeight);
+
+  // ////////////////black layer
+      push();
+      fill('rgba(0, 0, 0, 0.5)');
+      rect(0,  0, windowWidth, windowHeight);
+      pop();
+      push();
+      imageMode(CENTER);
+      image(trash, windowWidth/2, windowHeight/2);
+      pop();
+
+      chiudi.show();
+      folder.hide();
+      folder2.hide();
+      folder3.hide();
+      condom_bin.hide();
+      hazard.hide();
+
+
+    }
+
     if(info_totem == true && info_revolution == true){
 
       press_enter = true;
@@ -1512,6 +1597,7 @@ function draw() {
 
     menu.show();
     folder.hide();
+    folder3.hide();
     condom_bin.hide();
     hazard.hide();
     folder2.hide();
@@ -1870,32 +1956,44 @@ function apri_cartella2(){
 
 }
 
-function revolution(){
+// function revolution(){
+//
+//   rev_1 = true;
+//   //suono.play();
+//
+// }
 
-  rev_1 = true;
-  //suono.play();
+// function next_rev(){
+//
+//   rev_2 = true;
+//
+// }
 
-}
-
-function next_rev(){
-
-  rev_2 = true;
-
-}
-
-function next_rev2(){
-
-  rev_1 = false;
-  rev_2 = false;
-  info_revolution = true;
-  albtn_1.hide();
-  albtn_2.hide();
-
-}
+// function next_rev2(){
+//
+//   rev_1 = false;
+//   rev_2 = false;
+//   info_revolution = true;
+//   albtn_1.hide();
+//   albtn_2.hide();
+//
+// }
 
 function page(){
 
-  totem_pdf2 = true;
+
+  if(totem_pdf == true) {
+
+    totem_pdf2 = true;
+
+  }
+
+  if(rev_1  == true) {
+
+    rev_1 = false;
+    rev_2 = true;
+
+  }
 
 }
 
@@ -1903,8 +2001,10 @@ function chiudifile(){
 
   totem_pdf2 = false;
   vip_nudes = false;
+  trash_bin = false;
+  legend  = false;
   chiudi.hide();
-  info_totem = true;
+  rev_2 = false;
   prev_nude.hide();
   next_nude.hide();
 
@@ -1913,6 +2013,7 @@ function chiudifile(){
 function win_error(){
 
   suono.play();
+  trash_bin = true;
 
 }
 
