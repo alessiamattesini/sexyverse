@@ -47,6 +47,8 @@ function preload(){
 
   saved = loadSound('./assets_new/audio/saved.mp3');
 
+  ambient2 = loadSound('./assets_new/audio/diversity_sound.mp3');
+
 }
 
 function setup() {
@@ -279,6 +281,11 @@ function setup() {
   wrong_pw.size(757 * 2/3, 328 * 2/3);
   wrong_pw.position(windowWidth * 2/5 + 50, windowHeight/3);
   wrong_pw.hide();
+
+
+  ambient2.setVolume(0.5);
+  ambient2.loop();
+
 
 
 }
