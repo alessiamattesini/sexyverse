@@ -1283,6 +1283,7 @@ function draw() {
     pw.hide();
     submit.hide();
     wrong_pw.hide();
+    menu.hide();
     about.show();
     play_again.show();
 
