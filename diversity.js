@@ -677,7 +677,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "Once and for all Sexyverse will be at peace.  Are you ready for the adventure?";
+    text_box = "Once and for all Sexyverse will be at peace. Are you ready for the adventure?";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -883,7 +883,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "Nudes of Sexyverse citizens are being spread.  I must fix this problem before we leave.";
+    text_box = "Nudes of Sexyverse citizens are being spread. I must fix this problem before we leave.";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);

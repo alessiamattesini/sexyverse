@@ -795,7 +795,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "About earlier... sometimes I see things  and after a while they really happen!";
+    text_box = "About earlier... Sometimes I see things  and after a while they really happen!";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
@@ -1387,6 +1387,7 @@ function draw() {
 
       totem_pdf = false;
       folder.hide();
+      folder2.hide();
       folder3.hide();
       folder4.hide();
       folder5.hide();
@@ -1627,7 +1628,7 @@ function draw() {
 
     }
 
-    if(info_totem == true && info_revolution == true && totem_pdf == false && vip_nudes == false && trash_bin == false && legend == false && cut == false && revenge == false && rev_2 == false){
+    if(info_totem == true && info_revolution == true && totem_pdf == false && totem_pdf2 == false && vip_nudes == false && trash_bin == false && legend == false && cut == false && revenge == false && rev_2 == false){
 
       press_enter = true;
 
