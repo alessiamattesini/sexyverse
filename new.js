@@ -795,7 +795,7 @@ function draw() {
 
     //TEXT
     push();
-    text_box = "About earlier... Sometimes I see things  and after a while they really happen!";
+    text_box = "About earlier... sometimes I see things, and after a while they really happen!";
     textFont('Nunito');
     textAlign(LEFT);
     fill(255);
